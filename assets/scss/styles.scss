@@ -1,0 +1,273 @@
+// IMPORT NORMALIZE
+
+@import "normalize";
+
+// IMPORT VARIABLES
+
+@import "variables";
+
+// IMPORT BOURBON
+
+@import "bourbon/bourbon";
+@import "bitters/base";
+@import "neat/neat";
+
+// TABLE OF CONTENTS
+
+// 1. GLOBAL STYLES
+// 2. FONTS
+// 3. TYPOGRAPHY
+// 4. FLASHES
+// 5. LISTS
+// 6. SIMPLIFIED GRID
+
+// GLOBAL STYLES
+
+body, html {
+	width: 100%;
+	height: 100%;
+	background: $cream;
+	margin: 0;
+	padding: 0;
+	z-index: 0;
+}
+
+.page-wrap {
+	width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 15px;
+	@include row();
+	@include outer-container;
+	@include mq(iphone) {
+		max-width: 320px;
+	}
+	@include mq(android) {
+		max-width: 480px;
+	}
+	@include mq(tablet) {
+		max-width: 768px;
+	}
+	@include mq(laptop) {
+		max-width: 960px;
+	}
+	@include mq(desktop) {
+		max-width: 1280px;
+	}
+}
+
+// TYPOGRAPHY
+
+h1 {
+	color: $grey;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 1.5em;
+	margin-top: 20px;
+	@include mq(tablet) {
+		font-size: 2.5em;
+	}
+	@include mq(desktop) {
+		font-size: 3em;
+	}
+}
+
+p {
+	color: $charcoal;
+}
+
+a {
+	color: $carrot;
+	text-decoration: none;
+	@include transition (all .3s ease-in-out);
+	&:hover {
+		color: $pumpkin;
+		text-decoration: underline;
+	}
+}
+
+// SPINNER
+
+.spinner{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 7em;
+	z-index: 2;
+	div {
+		width: 7em;
+		margin: -3.5em 0 0 -3.5em;
+		height: 1em;
+		padding: 3em 0;
+		position: relative;
+		border-radius: 50%;
+		border: 2px solid #2f416f;
+		border-top: 2px solid transparent;
+		border-bottom: 2px solid transparent;
+		-webkit-animation: rotate 1s ease infinite;
+		-moz-animation: rotate 1s ease infinite;
+		-o-animation: rotate 1s ease infinite;
+		animation: rotate 1s ease infinite;
+	}
+	&:before {
+		content: "Loading";
+		position: absolute;
+		color: #2f416f;
+		font: .9em sans-serif;
+		width: 8em;
+		line-height: 8em;
+		text-align: center;
+		margin: -4.25em 0 0 -4em;
+		-webkit-animation: wink 1.4s ease infinite;
+	}
+}
+
+@include keyframes(rotate) {
+	0%{-webkit-transform:rotate(360deg)}
+}
+
+@include keyframes(wink) {
+	50%{opacity:0}
+}
+
+// DATE VERIFICATION
+
+.age-verification {
+	opacity: 0;
+	z-index: 2;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 800px;
+	background: #333;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 30px -20px; 
+	box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 30px -20px;
+	@include transition(all .65s ease-in-out);
+}
+
+.opacity {
+	opacity: 1 !important;
+}
+
+.main {
+	z-index: 1;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	float: left;
+	width: 100%;
+	height: 400px;
+	padding: 40px 0 0 0;
+}
+
+@include keyframes(bounce) {
+	0% {
+		top: -800px;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		@include transition(all .2s ease-in-out);
+	}
+	25% {
+		top: -785px;
+	}
+	50% {
+		top: -800px
+	}
+	75% {
+		top: -795px;
+	}
+	50% {
+		top: -800px;
+	}
+}
+
+.pinned {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	top: -800px;
+	@include animation(bounce .5s);
+	-webkit-animation-delay: .65s; /* Safari and Chrome */
+    animation-delay: .65s;
+}
+
+fieldset {
+	margin-top: 30px;
+}
+
+#month, #day, #year {
+	text-align: center;
+	@include span-columns(12);
+	padding: 15px 0;
+	@include mq(android) {
+		@include span-columns(4);
+		padding: 20px 0;
+	}
+}
+
+.enter {
+	@include span-columns(4);
+	@include shift(4);
+	@include mq(tablet) {
+		@include span-columns(2);
+		@include shift(5);
+	}
+	margin-top: 30px;
+	@include transition(all .3s ease-in-out);
+	&:hover {
+		background: $deepRed;
+	}
+}
+
+// FLASHES
+
+.success {
+	@extend %flash-success;
+}
+
+.error {
+	@extend %flash-error;
+}
+
+.notice {
+	@extend %flash-notice;
+}
+
+.alert {
+	@extend %flash-alert;
+}
+
+// LISTS
+
+ol.default {
+	@extend %default-ol;
+}
+
+ul.default {
+	@extend %default-ul;
+}
+
+// SIMPLIFIED GRID
+
+.row { float: left; width: 100%; @include row(); }
+
+.whole { @include span-columns(12); }
+
+.half { @include span-columns(6); }
+
+.third { @include span-columns(4); }
+
+.fourth { @include span-columns(3); }
+
+.sixth { @include span-columns(2); }
+
+.one { @include span-columns(1); }
+
+.grid-example {
+	float: left;
+	height: 100px;
+	background: $muteNavy;
+	margin-bottom: 2.35765%;
+}
