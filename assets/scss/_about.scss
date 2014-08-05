@@ -1,0 +1,190 @@
+// ABOUT BACKGROUND
+
+.about-bg {
+	float: left;
+	width: 100%;
+	height: 100%;
+	min-height: 768px;
+	// opacity: 0;
+	background: url(../img/ronportrait-transparent.png) center bottom fixed no-repeat, $blue-gradient;
+	@include mq(tablet) {
+		background: url(../img/ronportrait.png) center bottom fixed no-repeat, $blue-gradient;
+	}
+	
+	// ABOUT CONTAINER
+
+	.about {
+		float: left;
+		width: 100%;
+		height: 100% !important;
+
+		// ABOUT SECTION
+
+		.about-section {
+			float: left;
+			height: 100%;
+			min-height: 500px;
+			@include box-sizing(border-box);
+			padding-top: 125px;
+			background: transparent;
+			margin-left: 5px;
+		}
+	}
+}
+
+// SVG'S
+
+.newYork {
+	width: 110px;
+	height: 150px;
+	position: relative;
+	left: 50%;
+	margin-left: -55px;
+	overflow: visible;
+	@include mq(desktop) {
+		width: 190px;
+		position: relative;
+		left: 50%;
+		margin-left: -95px;
+	}
+	path {
+		fill: url(#gradient1);
+	}
+}
+
+.education {
+	width: 110px;
+	height: 150px;
+	position: relative;
+	left: 50%;
+	margin-left: -55px;
+	overflow: visible;
+	@include mq(desktop) {
+		width: 190px;
+		position: relative;
+		left: 50%;
+		margin-left: -95px;
+	}
+	path {
+		fill: url(#gradient2);
+	}
+}
+
+.teacher {
+	width: 110px;
+	height: 150px;
+	position: relative;
+	left: 50%;
+	margin-left: -55px;
+	@include mq(desktop) {
+		width: 190px;
+		position: relative;
+		left: 50%;
+		margin-left: -95px;
+	}
+	path {
+		fill: url(#gradient3);
+	}
+}
+
+.playboy {
+	width: 110px;
+	height: 150px;
+	position: relative;
+	left: 50%;
+	margin-left: -55px;
+	@include mq(desktop) {
+		width: 190px;
+		position: relative;
+		left: 50%;
+		margin-left: -95px;
+	}
+	path {
+		fill: url(#gradient4);
+	}
+}
+
+// ICON ANIMATION
+
+.flickerIcon1 {
+	@include animation(iconAnimation1 1.5s ease-in-out);
+	@include animation-iteration-count(1);
+	-webkit-animation-delay: .5s;
+	animation-delay: .5s;
+}
+
+@include keyframes(iconAnimation1) {
+	0% {
+		fill: url(#gradient1);
+	}
+	15% {
+		fill: $black;
+	}
+	25% {
+		fill: url(#gradient1);
+	}
+	35% {
+		fill: $black;
+	}
+	50% {
+		fill: url(#gradient1);
+	}
+	100% {
+		fill: url(#gradient1);
+	}
+}
+
+// TEXT ANIMATION
+
+.flickerText {
+	@include animation(textAnimation 1.5s ease-in-out);
+	@include animation-iteration-count(1);
+	-webkit-animation-delay: .5s;
+	animation-delay: .5s;
+}
+
+
+@include keyframes(textAnimation) {
+	0% {
+		background: $green-gradient;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent !important;
+		-webkit-text-shadow: 0px 0px 20px $neonGreen;
+		text-shadow: 0px 0px 20px $neonGreen;
+	}
+	15% {
+		background: $off-light;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent !important;
+		-webkit-text-shadow: 0px 0px 20px $charcoal;
+		text-shadow: 0px 0px 20px $charcoal;
+	}
+	25% {
+		background: $green-gradient;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent !important;
+		-webkit-text-shadow: 0px 0px 20px $neonGreen;
+		text-shadow: 0px 0px 20px $neonGreen;
+	}
+	35% {
+		background: $off-light;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent !important;
+		-webkit-text-shadow: 0px 0px 20px $charcoal;
+		text-shadow: 0px 0px 20px $charcoal;
+	}
+	50% {
+		background: $green-gradient;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent !important;
+		-webkit-text-shadow: 0px 0px 20px $neonGreen;
+		text-shadow: 0px 0px 20px $neonGreen;
+	}
+	100% {
+		background: $green-gradient;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent !important;
+		-webkit-text-shadow: 0px 0px 20px $neonGreen;
+		text-shadow: 0px 0px 20px $neonGreen;
+	}
+}

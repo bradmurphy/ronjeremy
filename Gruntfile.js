@@ -23,7 +23,8 @@ module.exports = function(grunt) {
           src: [
             'assets/js/vendor/*.js', // All JS in the vendor folder
             'assets/js/plugins/*.js', // All JS in the plugins folder
-            'assets/js/main.js'  // This specific file
+            'assets/js/main.js',  // This specific file
+            'assets/js/gamedata.js'  // This specific file
           ],
           dest: 'assets/js/main.min.js',
         }

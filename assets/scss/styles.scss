@@ -12,27 +12,21 @@
 @import "bitters/base";
 @import "neat/neat";
 
-// TABLE OF CONTENTS
-
-// 1. GLOBAL STYLES
-// 2. FONTS
-// 3. TYPOGRAPHY
-// 4. FLASHES
-// 5. LISTS
-// 6. SIMPLIFIED GRID
-
 // GLOBAL STYLES
 
 body, html {
 	width: 100%;
 	height: 100%;
-	background: $cream;
+	background: $siteGray;
 	margin: 0;
 	padding: 0;
 	z-index: 0;
+	-webkit-font-smoothing: antialiased !important;
 }
 
-.page-wrap {
+// CONTENT WRAP
+
+.content-wrap {
 	width: 100%;
 	height: auto;
 	margin-left: auto;
@@ -57,167 +51,141 @@ body, html {
 	}
 }
 
+// WRAPPERS
+
+#main {
+	z-index: 1;
+	opacity: 0;
+	position: absolute;
+	float: left;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#game {
+	z-index: 1;
+	opacity: 0;
+	position: absolute;
+	float: left;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+// SCROLLBARS
+
+// ::-webkit-scrollbar              {width: 8px; height: 8px;}
+// ::-webkit-scrollbar-track        {background: $black;}
+// ::-webkit-scrollbar-thumb        {background: $neonGreen; border-radius: 15px;}
+// ::-webkit-scrollbar-corner       {background: $black;}
+
 // TYPOGRAPHY
 
 h1 {
-	color: $grey;
-	text-transform: uppercase;
-	text-align: center;
+	font-family: $header-font;
 	font-size: 1.5em;
-	margin-top: 20px;
+	background: $neonGreen;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent !important;
+	-webkit-text-shadow: 0px 0px 20px $neonGreen;
+	text-shadow: 0px 0px 20px $neonGreen;
+	text-align: center;
+	margin-bottom: 55px;
 	@include mq(tablet) {
-		font-size: 2.5em;
+		font-size: 2em;
 	}
 	@include mq(desktop) {
-		font-size: 3em;
+		font-size: 2.813em;
+	}
+}
+
+h2 {
+	font-family: $header-font;
+	font-size: 1.5em;
+	background: $neonGreen;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent !important;
+	-webkit-text-shadow: 0px 0px 20px $neonGreen;
+	text-shadow: 0px 0px 20px $neonGreen;
+	text-align: center;
+	margin-bottom: 55px;
+	text-transform: uppercase;
+	@include mq(tablet) {
+		margin-top: 150px;
+		font-size: 2em;
+	}
+	@include mq(desktop) {
+		font-size: 2.813em;
 	}
 }
 
 p {
-	color: $charcoal;
-}
-
-a {
-	color: $carrot;
-	text-decoration: none;
-	@include transition (all .3s ease-in-out);
-	&:hover {
-		color: $pumpkin;
-		text-decoration: underline;
-	}
-}
-
-// SPINNER
-
-.spinner{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 7em;
-	z-index: 2;
-	div {
-		width: 7em;
-		margin: -3.5em 0 0 -3.5em;
-		height: 1em;
-		padding: 3em 0;
-		position: relative;
-		border-radius: 50%;
-		border: 2px solid #2f416f;
-		border-top: 2px solid transparent;
-		border-bottom: 2px solid transparent;
-		-webkit-animation: rotate 1s ease infinite;
-		-moz-animation: rotate 1s ease infinite;
-		-o-animation: rotate 1s ease infinite;
-		animation: rotate 1s ease infinite;
-	}
-	&:before {
-		content: "Loading";
-		position: absolute;
-		color: #2f416f;
-		font: .9em sans-serif;
-		width: 8em;
-		line-height: 8em;
-		text-align: center;
-		margin: -4.25em 0 0 -4em;
-		-webkit-animation: wink 1.4s ease infinite;
-	}
-}
-
-@include keyframes(rotate) {
-	0%{-webkit-transform:rotate(360deg)}
-}
-
-@include keyframes(wink) {
-	50%{opacity:0}
-}
-
-// DATE VERIFICATION
-
-.age-verification {
-	opacity: 0;
-	z-index: 2;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 800px;
-	background: #333;
-	-webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 30px -20px; 
-	box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 30px -20px;
-	@include transition(all .65s ease-in-out);
-}
-
-.opacity {
-	opacity: 1 !important;
-}
-
-.main {
-	z-index: 1;
-	opacity: 0;
-	position: absolute;
-	left: 0;
-	top: 0;
-	float: left;
-	width: 100%;
-	height: 400px;
-	padding: 40px 0 0 0;
-}
-
-@include keyframes(bounce) {
-	0% {
-		top: -800px;
-		-webkit-box-shadow: none;
-		box-shadow: none;
-		@include transition(all .2s ease-in-out);
-	}
-	25% {
-		top: -785px;
-	}
-	50% {
-		top: -800px
-	}
-	75% {
-		top: -795px;
-	}
-	50% {
-		top: -800px;
-	}
-}
-
-.pinned {
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	top: -800px;
-	@include animation(bounce .5s);
-	-webkit-animation-delay: .65s; /* Safari and Chrome */
-    animation-delay: .65s;
-}
-
-fieldset {
-	margin-top: 30px;
-}
-
-#month, #day, #year {
-	text-align: center;
-	@include span-columns(12);
-	padding: 15px 0;
-	@include mq(android) {
-		@include span-columns(4);
-		padding: 20px 0;
-	}
-}
-
-.enter {
-	@include span-columns(4);
-	@include shift(4);
+	font-family: $copy-font;
+	font-size: 1em;
+	color: $white;
+	width: 80%;
+	margin-left: 10%;
+	text-align: left;
 	@include mq(tablet) {
-		@include span-columns(2);
-		@include shift(5);
+		width: 60%;
+		margin-left: 20%;
+		font-size: 1.5em;
 	}
-	margin-top: 30px;
-	@include transition(all .3s ease-in-out);
-	&:hover {
-		background: $deepRed;
+
+}
+
+p.drink {
+	font-family: $copy-font;
+	font-size: 1em;
+	color: $white;
+	width: 90%;
+	margin-left: 5%;
+	text-align: left;
+	@include mq(tablet) {
+		margin-left: 0;
+		width: 100%;
+		font-size: 1.5em;
+	}
+}
+
+// IMPORT SECTIONED CSS
+
+@import "game";
+@import "loader";
+@import "verify";
+@import "homescreen";
+@import "about";
+@import "drinks";
+@import "social";
+
+// SLIDER CONTROL STYLES
+
+.bx-next {
+	display: none;
+	@include mq(tablet) {
+		margin-top: 0px !important;
+		top: 60% !important;
+		display: block;
+	}
+}
+
+.bx-prev {
+	display: none;
+	@include mq(tablet) {
+		margin-top: 0px !important;
+		top: 60% !important;
+		display: block;
+	}
+}
+
+.bx-pager {
+	display: none;
+	@include mq(tablet) {
+		display: block;
 	}
 }
 
@@ -251,7 +219,7 @@ ul.default {
 
 // SIMPLIFIED GRID
 
-.row { float: left; width: 100%; @include row(); }
+.row { @include row(); }
 
 .whole { @include span-columns(12); }
 

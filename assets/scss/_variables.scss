@@ -18,6 +18,14 @@
 	}
 }
 
+// MISC
+
+$homescreen-side-width: calc(50% - 640px);
+$homescreen-bottom-width: calc(100% - 788px);
+$blue-gradient: -webkit-linear-gradient(top, #191919 0%,#08003e 50%,#191919 100%);
+$green-gradient: -webkit-linear-gradient(top, #b6ffdd 0%,#4affab 99%); 
+$orange-gradient: -webkit-linear-gradient(top, #fee3bf 0%,#fc9207 100%);
+
 // COlORS
 
 $muteAqua: #1abc9c;
@@ -31,7 +39,7 @@ $purple: #8e44ad;
 $muteNavy: #34495e;
 $navy: #2c3e50;
 $yellow: #f1c40f;
-$orange: #f39c12;
+$orange: #fc9003;
 $carrot: #e67e22;
 $pumpkin: #d35400;
 $brightRed: #e74c3c;
@@ -41,4 +49,16 @@ $cream: #fafafa;
 $silver: #bdc3c7;
 $muteGrey: #95a5a6;
 $grey: #7f8c8d;
-$charcoal: #444444;
+$charcoal: #333;
+$off-light: #444;
+
+$siteGray: #191919;
+$neonGreen: #36ffa2;
+$white: #fff;
+$black: #000;
+$transparentBlack: rgba(0,0,0,0.5);
+
+// FONTS
+
+$header-font: 'Montserrat', sans-serif;
+$copy-font: 'Open Sans', sans-serif;

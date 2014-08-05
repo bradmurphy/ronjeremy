@@ -1,0 +1,186 @@
+// AGE VERIFICATION CONTAINER
+
+.age-verification {
+	opacity: 0;
+	z-index: 2;
+	position: fixed;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	min-height: 500px;
+	height: 90%;
+	background-color: $black;
+	background: url(../img/background-palm-dark.jpg);
+	background-size: cover;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 30px -20px; 
+	box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 30px -20px;
+	@include transition(all .65s ease-in-out);
+	@include mq(tablet) {
+		min-height: 768px;
+	}
+}
+
+// OPACITY CLASS FOR HIDING ELEMENTS
+
+.opacity {
+	opacity: 1 !important;
+}
+
+// BOUNCE ANIMATION
+
+@include keyframes(bounce) {
+	0% {
+		@include transform(translateY(-90%));
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		@include transition(all .2s ease-in-out);
+	}
+	25% {
+		@include transform(translateY(5%));
+	}
+	50% {
+		@include transform(translateY(0%));
+	}
+	75% {
+		@include transform(translateY(2.5%));
+	}
+	100% {
+		@include transform(translateY(0%));
+	}
+}
+
+// PINNED STATE
+
+.pinned {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	top: -2000px;
+	@include animation(bounce .5s);
+	-webkit-animation-delay: .65s; /* Safari and Chrome */
+    animation-delay: .65s;
+    @include mq(tablet) {
+    	top: -90%;
+    }
+}
+
+// AGE VERIFY LAYOUT
+
+.img-wrap {
+	float: left;
+	margin-top: 25px;
+	width: 100%;
+	#age-logo {
+		float: left;
+		clear: both;
+		width: 232px;
+		margin-left: -116px;
+		@include mq(laptop) {
+			width: 387px;
+			margin: 0 0 0 -193px;
+		}
+	}
+	#bottles {
+		float: left;
+		clear: both;
+		display: none;
+		@include mq(tablet) {
+			display: block;
+			width: 188px;
+			margin-left: -94px;
+		}
+	}
+	img {
+		position: relative;
+		left: 50%;
+	}
+}
+
+// ENTER TEXT
+
+.enter-text {
+	font-family: $header-font;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	color: $white;
+	letter-spacing: 1px;
+}
+
+// FIELDSET
+
+fieldset {
+	float: left;
+	width: 100%;
+	background: transparent;
+	border: none;
+	text-align: center;
+}
+
+// AGE VERIFY MQ'S
+
+#age-verify {
+	margin-top: 20px;
+	@include mq(android) {
+		@include span-columns(12);
+		@include shift(0);
+	}
+	@include mq(tablet) {
+		@include span-columns(6);
+		@include shift(3);
+	}
+}
+
+// INPUT FIELD STYLING
+
+#month, #day, #year {
+	font-family: $header-font;
+	font-size: 1.25em;
+	border-radius: 0px;
+	text-align: center;
+	border: 2px solid transparent;
+	background: $transparentBlack;
+	@include box-sizing(border-box);
+	@include animation(all .3s ease-in-out);
+	@include placeholder {
+		color: $white;
+	}
+	@include mq(tablet) {
+		@include span-columns(4);
+		padding: 20px 0;
+	}
+}
+
+// FOCUS STATE
+
+#{$all-text-inputs-focus} {
+  color: $neonGreen;
+}
+
+#{$all-text-inputs} {
+  color: $neonGreen;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number]:focus {
+	-webkit-box-shadow: 0 0 30px $neonGreen, inset 0 0 20px $neonGreen;
+	box-shadow: 0 0 30px $neonGreen, inset 0 0 20px $neonGreen;
+	border: 2px solid $neonGreen !important;
+	@include box-sizing(border-box);
+}
+
+// SUBMIT BUTTON
+
+.enter {
+	float: right;
+	width: 76px;
+	height: 67px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background: url(../img/arrow-right.png);
+	background-color: transparent !important;
+}
