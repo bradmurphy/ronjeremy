@@ -68,6 +68,7 @@ var ronJeremy = (function () {
 				return false;
 			} else {
 				$("#age-container").addClass("pinned");
+				$("#homescreen-logo").addClass("big-logo-animation");
 				window.scrollTo(0,0);
 				setTimeout(function() {
 					$("#age-container").remove();
@@ -86,6 +87,57 @@ var ronJeremy = (function () {
 		// CALL INIT FUNCTIONS
 
 		ageVerify();
+
+		// MENU HOVER
+
+		// $("#sunButton").mouseover(function() {
+		// 	$(this).css("background", "url(assets/img/menu-hover.png)");
+		// });
+
+		// $("#sunButton").mouseout(function() {
+		// 	$(this).css("background", "url(assets/img/menu.png)");
+		// });
+
+		// MENU FUNCTIONALITY
+
+		var menuStatus = true;
+
+		$("#sunButton").on("click", function() {
+
+			$(".main-nav").toggleClass("down");
+			if (menuStatus) {
+				$(this).css("background", "url(assets/img/menu-hover.png)");
+				menuStatus = false;
+			} else {
+				$(this).css("background", "url(assets/img/menu.png)");
+				menuStatus = true;
+			}
+			
+		});
+
+		$(".main-nav ul li a").on("click", function() {
+
+			$(".main-nav").removeClass("down");
+			$("#sunButton").css("background", "url(assets/img/menu.png)");
+			menuStatus = true;
+
+		});
+
+		$("#homescreen-logo").on("click", function() {
+
+			$(".main-nav").removeClass("down");
+			$("#sunButton").css("background", "url(assets/img/menu.png)");
+			menuStatus = true;
+
+		});
+
+		$("#homescreen-logo-mobile").on("click", function() {
+
+			$(".main-nav").removeClass("down");
+			$("#sunButton").css("background", "url(assets/img/menu.png)");
+			menuStatus = true;
+
+		});
 
 		// SCROLL IT PLUGIN
 
@@ -109,8 +161,9 @@ var ronJeremy = (function () {
 
 		$('.drinks').bxSlider({
 			touchEnabled: true,
+			infiniteLoop: false,
+			hideControlOnEnd: true,
 			pager: true,
-			controls: false,
 		    buildPager: function(slideIndex){
 		      switch (slideIndex){
 		        case 0:
@@ -118,9 +171,9 @@ var ronJeremy = (function () {
 		        case 1:
 		          return '<img src="assets/img/drink2.png" class="drink-thumb" alt="Drink 2">';
 		        case 2:
-		          return '<img src="assets/img/drink3.png" class="drink-thumb" alt="Drink 3">';
+		          return '<img src="assets/img/drink4.png" class="drink-thumb" alt="Drink 3">';
 		        case 3:
-		          return '<img src="assets/img/drink4.png" class="drink-thumb" alt="Drink 4">';
+		          return '<img src="assets/img/drink3.png" class="drink-thumb" alt="Drink 4">';
 		        case 4:
 		          return '<img src="assets/img/drink5.png" class="drink-thumb" alt="Drink 5">';
 		        case 5:
@@ -133,42 +186,29 @@ var ronJeremy = (function () {
 
 		$.waypoints('refresh');
 
+		// MAIN MENU POPUP
+
+		$("#sunButton").waypoint(function() {
+			$(this).attr("class", "menu-button menu-fixed");
+		}, { offset: '25%' });
+
 		// ANIMATE H2
 
 		$("h2").waypoint(function() {
 			$("h2").removeClass("flickerText");
 			setTimeout(function() {$("h2").addClass("flickerText");}, 50);
-		}, { offset: 200 });
+		}, { offset: '25%' });
 
 		// ANIMATE H1
 
 		$("h1").waypoint(function() {
 			$("h1").removeClass("flickerText");
 			setTimeout(function() {$("h1").addClass("flickerText");}, 50);
-		}, { offset: 200 });
-
-		// ABOUT AND DRINK FADE INS
-
-		// $(".about-bg").waypoint(function() {
-		// 	$(this).animate({
-		// 		opacity: 1;
-		// 	}, 5000);
-		// }, { offset: '20%' });
-
-		// $(".drinks-bg").waypoint(function() {
-		// 	$(this).fadeIn("slow", function() { 
-		// 		$(this).addClass("opacity");
-		// 	});
-		// }, { offset: '20%' });
+		}, { offset: '25%' });
 
 		// CAROUSEL ANIMATIONS
 
-		var aboutContainer = document.getElementById("#about");
-		var slide = aboutContainer.style.webkitTransform;
-		var slideVariant;
-
 		var pagerLink = $(".bx-pager-link");
-		console.log(pagerLink[0]);
 
 		// PAGER TEXT ANIMATION
 
@@ -185,16 +225,105 @@ var ronJeremy = (function () {
 
 		});
 
-		// NEXT BUTTON ANIMATION
+		// CAROUSEL VARIABLES
+
+		var aboutContainer = document.getElementById("#about");
+		var aboutSlide = aboutContainer.style.webkitTransform;
+		var socialContainer = document.getElementById("#social");
+		var socialSlide = socialContainer.style.webkitTransform;
+		var slideVariant;
+
+		// ABOUT NEXT BUTTON ANIMATION
 
 		$("a.bx-next").on("click", function() {
 
 			slideVariant = aboutContainer.style.webkitTransform;
-			console.log(slideVariant);
-			if (slide != slideVariant) {
-				console.log("Animate Shit Right");
 
-				// TEXT FLICKER
+			if (aboutSlide != slideVariant) {
+
+				// FLICKER ICON 1
+
+				$(".newYork path").attr("class", "");	
+				setTimeout(function() {
+					$(".newYork path").attr("class", "flickerIcon1");
+				}, 50);
+
+				// FLICKER ICON 2
+
+				$(".education path").attr("class", "");	
+				setTimeout(function() {
+					$(".education path").attr("class", "flickerIcon2");
+				}, 50);
+
+				// FLICKER ICON 3
+
+				$(".teacher path").attr("class", "");	
+				setTimeout(function() {
+					$(".teacher path").attr("class", "flickerIcon3");
+				}, 50);
+
+				// FLICKER ICON 4
+
+				$(".playboy path").attr("class", "");	
+				setTimeout(function() {
+					$(".playboy path").attr("class", "flickerIcon4");
+				}, 50);
+
+				// TEXT FLICKER H1
+
+				$("h1").removeClass("flickerText");	
+				setTimeout(function() {
+					$("h1").addClass("flickerText");
+				}, 50);
+
+				// TEXT FLICKER H2
+
+				$("h2").removeClass("flickerText");	
+				setTimeout(function() {
+					$("h2").addClass("flickerText");
+				}, 100);
+
+			}
+
+		});
+
+		// ABOUT PREVIOUS BUTTON ANIMATION
+
+		$("a.bx-prev").on("click", function() {
+
+			slideVariant = aboutContainer.style.webkitTransform;
+
+			if (aboutSlide != slideVariant) {
+
+				// FLICKER ICON 1
+
+				$(".newYork path").attr("class", "");	
+				setTimeout(function() {
+					$(".newYork path").attr("class", "flickerIcon1");
+				}, 50);
+
+				// FLICKER ICON 2
+
+				$(".education path").attr("class", "");	
+				setTimeout(function() {
+					$(".education path").attr("class", "flickerIcon2");
+				}, 50);
+
+				// FLICKER ICON 3
+
+				$(".teacher path").attr("class", "");	
+				setTimeout(function() {
+					$(".teacher path").attr("class", "flickerIcon3");
+				}, 50);
+
+				// FLICKER ICON 4
+
+				$(".playboy path").attr("class", "");	
+				setTimeout(function() {
+					$(".playboy path").attr("class", "flickerIcon4");
+				}, 50);
+
+				// TEXT FLICKER H1
 
 				$("h1").removeClass("flickerText");	
 				setTimeout(function() {
@@ -205,20 +334,38 @@ var ronJeremy = (function () {
 
 		});
 
-		// PREVIOUS BUTTON ANIMATION
+		// SOCIAL NEXT ANIMATION
+
+		$("a.bx-next").on("click", function() {
+
+			slideVariant = socialContainer.style.webkitTransform;
+
+			if (socialSlide != slideVariant) {
+
+				// TEXT FLICKER H2
+
+				$("h2").removeClass("flickerText");	
+				setTimeout(function() {
+					$("h2").addClass("flickerText");
+				}, 50);
+
+			}
+
+		});
+
+		// SOCIAL NEXT ANIMATION
 
 		$("a.bx-prev").on("click", function() {
 
-			slideVariant = aboutContainer.style.webkitTransform;
+			slideVariant = socialContainer.style.webkitTransform;
 
-			if (slide != slideVariant) {
-				console.log("Animate Shit Left");
+			if (socialSlide != slideVariant) {
 
-				// TEXT FLICKER
+				// TEXT FLICKER H2
 
-				$("h1").removeClass("flickerText");	
+				$("h2").removeClass("flickerText");	
 				setTimeout(function() {
-					$("h1").addClass("flickerText");
+					$("h2").addClass("flickerText");
 				}, 50);
 
 			}
@@ -243,6 +390,9 @@ $(document).ready(function() {
 
 	// CALL PROTECTED SCRIPTS
 
+	// $(".age-verification").hide();
+	// $(".overlay").hide();
+	
 	ronJeremy.init();
 
 });
@@ -251,18 +401,7 @@ $(document).ready(function() {
 
 $(window).load(function() {
 
-	$(".spinner").delay(1500).fadeOut(500);
-
-	function loadContent() {
-		$("#main").fadeIn(500).addClass("opacity");
-	}
-	
-	function loadAge() {
-		$("#age-container").fadeIn(500).addClass("opacity");
-	}
-
-	setTimeout(loadAge, 2000);
-	setTimeout(loadContent, 2500);
+	$(".overlay").delay(2500).fadeOut(500);
 
 });
 

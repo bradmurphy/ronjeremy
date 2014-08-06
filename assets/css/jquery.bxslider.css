@@ -103,13 +103,11 @@
 /* DIRECTION CONTROLS (NEXT / PREV) */
 
 .bx-wrapper .bx-prev {
-	left: 83px;
 	background: url(../img/arrow-left.png) no-repeat;
 	background-size: contain;
 }
 
 .bx-wrapper .bx-next {
-	right: 83px;
 	background: url(../img/arrow-right.png) no-repeat;
 	background-size: contain;
 }
@@ -127,8 +125,7 @@
 	top: 50%;
 	margin-top: -26px;
 	outline: 0;
-	width: 60px;
-	height: 53px;
+	width: 40px;
 	text-indent: -9999px;
 	z-index: 9999;
 }

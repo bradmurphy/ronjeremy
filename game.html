@@ -18,36 +18,76 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
+         <!-- SPINNER -->
+
+        <div class="overlay"><div class="spinner"><div></div></div></div><!-- END SPINNER -->
+
         
-        <!-- SPINNER -->
+        <div id="howto" class="page">
+            how to play
+            <a class="pagelink" href="#whereareyou">go to where are you page</a>
+        </div>
 
-        <div class="spinner"><div></div></div><!-- END SPINNER -->
-        
-        <!-- GAME WRAP -->
 
-        <section id="game" class="game-wrap">
+        <div id="whereareyou" class="page">
+            where are you
+            <a class="pagelink" id="where-bar" href="#start">bar</a><br/>
+            <a class="pagelink" id="where-friends" href="#start">home with friends</a>
+        </div>
 
-            <div class="content-wrap row">
 
-                    <div class="challenge-wrap animated" id="challenge-wrap">
+        <div id="start" class="page">
+            start
+            <a class="pagelink" href="#gameplay">go to game play page</a>
 
-                        <div id="clock" class="clock">
-                        
-                            <div id="needle"></div>
-                            <div id="center"></div>
-                        
-                        </div>
+        </div>
 
-                        <h2 id="challenge">take the challenge</h2>
-                        
+
+
+        <div id="gameplay" class="page">
+            game play page
+
+            <div class="game-wrap" id="action-shot">
+
+                <div class="challenge-wrap">
+                    
+                    <div class="clock">
+                        <div id="needle"></div>
                     </div>
 
-                    <button class="button" id="next">CHALLENGE ME</button>
+                </div>
+
+                <h3 id="challenge-desc"></h3>
 
             </div>
 
-        </section><!-- END GAME WRAP -->
+        </div>
+
+
+        <div id="outoftime" class="page">
+            out of time 
+
+            <div class="challenge-wrap">
+                
+                <div class="clock2">
+                    <div id="needle2"></div>
+                </div>
+
+            </div>
+
+            <a class="pagelink" href="#social">yes (completed)</a>
+            <a class="pagelink" href="#social">no (not completed)</a>
+        </div>
+
+
+        <div id="social" class="page">
+            social
+
+            <h3>I completed the Ron Jeremy <span id="challenge-name"></span> Challenge #LiveLikeRon</h3>
+        </div>
+
+
+
 
         <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
         <script src="assets/js/game/gamedata.js"></script>

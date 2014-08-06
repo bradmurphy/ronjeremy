@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="assets/css/styles.min.css">
         <link rel="stylesheet" href="assets/css/jquery.bxslider.css">
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -27,7 +28,7 @@
 
         <!-- SPINNER -->
 
-        <div class="spinner"><div></div></div><!-- END SPINNER -->
+       <div class="overlay"><div class="spinner"><div></div></div></div><!-- END SPINNER -->
         
         <!-- AGE VERIFY -->
 
@@ -76,6 +77,8 @@
 
             <section class="home-screen" data-scroll-index="0">
                 
+                <div class="top"></div>
+
                 <div class="left"></div>
 
                 <div class="sun">
@@ -90,10 +93,11 @@
                             </ul>
                         </nav>
                         
-                        <img src="assets/img/logo-big.png" alt="Ron Jeremy Logo" id="homescreen-logo-mobile" />
-                        <img src="assets/img/logo-big.png" alt="Ron Jeremy Logo" id="homescreen-logo" />
+                        <img src="assets/img/rj-mobile.png" alt="Ron Jeremy Logo" id="homescreen-logo-mobile" data-scroll-nav="0"/>
+                        <img src="assets/img/logo-big.png" alt="Ron Jeremy Logo" id="homescreen-logo" data-scroll-nav="0"/>
                         <a href="game.html" class="game-callout-mobile" target="_blank">#livelikeron</a>
                         <a href="game.html" class="game-callout" target="_blank">#livelikeron</a>
+                        <div class="down-arrow" data-scroll-nav="1"></div>
                     </div>  
                 </div>
 
@@ -102,6 +106,28 @@
                 <div class="bottom"></div>
 
             </section><!-- END HOME SCREEN -->
+
+            <!-- MENU BUTTON -->
+            <div class="content-wrap">
+
+                <a id="sunButton" class="menu-button"></a>
+
+            </div><!-- END MENU BUTTON -->
+
+            <!-- NAV -->
+
+            <nav class="main-nav">
+                    
+                <a data-scroll-nav="0" class="logo"></a>
+
+                <ul>
+                    <li><a data-scroll-nav="1">about</a></li>
+                    <li><a href="game.html" target="_blank">#livelikeron</a></li>
+                    <li><a data-scroll-nav="2">drinks</a></li>
+                    <li><a data-scroll-nav="3">contact</a></li>
+                </ul>
+
+            </nav><!-- END NAV-->
             
             <!-- ABOUT -->
 
@@ -113,44 +139,11 @@
 
                         <div class="content-wrap row">
                             
-                            <h1>How do you<br/>become an icon?</h1>
+                            <div class="black-box">
+                                <h1>How do you become an icon?</h1>
 
-                            <p>Many people have gone down in history for their talent, beliefs or simply the way they chose to live their life. The path they took to greatness may not have always been an easy one, but it was one they wouldn't dare think to regret.</p>
-
-                        </div>
-                        
-                    </article>
-
-                    <article class="about-section">
-
-                        <div class="content-wrap row">
-                            
-                            <svg class="newYork" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Your_Icon" x="0px" y="0px" viewBox="0 0 125 125" enable-background="new 0 0 100 100" xml:space="preserve">    
-                                <defs>
-                                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" stop-color="#FEE3BF" />
-                                        <stop offset="100%" stop-color="#FC9207" />
-                                    </linearGradient>
-                                    <filter id="glow1" x="-10%" y="-10%" width="200%" height="200%">
-                                        <feOffset result="offOut" in="SourceGraphic" dx="1" dy="1" />
-                                        <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" />
-                                        <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-                                    </filter>
-                                </defs>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <g>
-                                            </g>
-                                        </g>
-                                        <g>
-                                        </g>
-                                    </g>
-                                </g>
-                                <path filter="url(#glow1)" d="M62.397,31.082c-0.512-0.219-1.096,0.015-1.315,0.521c-0.219,0.507,0.014,1.095,0.521,1.315C73.205,37.939,81,49.224,81,61  c0,11.01-6.085,20.9-15,26.411V75c0-0.553-0.447-1-1-1V61c0-0.553-0.447-1-1-1h-2V50c0-0.552-0.447-1-1-1h-1v-4c0-0.552-0.447-1-1-1  h-1v-2c0-0.552-0.447-1-1-1h-1.272C55.236,39.291,54,33.923,54,23c0-0.552-0.447-1-1-1h-2V7c0-0.552-0.448-1-1-1s-1,0.448-1,1v15h-2  c-0.552,0-1,0.448-1,1c0,10.926-1.236,16.295-1.728,18H43c-0.552,0-1,0.448-1,1v2h-1c-0.552,0-1,0.448-1,1v4h-1  c-0.552,0-1,0.448-1,1v10h-2c-0.552,0-1,0.447-1,1v13c-0.552,0-1,0.447-1,1v12.379C25.083,81.862,19,71.99,19,61  c0-11.764,7.795-23.049,19.398-28.083c0.507-0.22,0.739-0.809,0.52-1.315c-0.22-0.506-0.81-0.74-1.315-0.52  C25.279,36.428,17,48.451,17,61c0,17.888,15.136,33,33.051,33C68.22,94,83,79.196,83,61C83,48.438,74.721,36.416,62.397,31.082z   M56,76h8v12c0,0.174,0.056,0.328,0.133,0.471c-2.539,1.34-5.271,2.338-8.133,2.923V76z M63,74h-7V62h7V74z M52.003,24  c0.065,9.547,1.061,14.748,1.647,17H51V24H52.003z M47.997,24H49v17h-2.65C46.937,38.748,47.931,33.547,47.997,24z M44,43h1h10h1v1  H44V43z M42,46h16v3H42V46z M37,62h7v12h-7V62z M36,88V76h8v15.378c-2.858-0.59-5.584-1.592-8.119-2.929  C35.951,88.313,36,88.164,36,88z M49,91.972V57c0-0.553-0.448-1-1-1s-1,0.447-1,1v34.842c-0.335-0.034-0.667-0.082-1-0.128V75V61  c0-0.553-0.448-1-1-1h-5v-9h20v9h-5c-0.553,0-1,0.447-1,1v14v16.726c-0.332,0.045-0.665,0.09-1,0.123V57c0-0.553-0.447-1-1-1  s-1,0.447-1,1v34.975C50.684,91.985,50.369,92,50.051,92C49.699,92,49.35,91.985,49,91.972z M61,63c0.553,0,1,0.447,1,1v8  c0,0.553-0.447,1-1,1s-1-0.447-1-1v-8C60,63.447,60.447,63,61,63z M59,64v8c0,0.553-0.447,1-1,1s-1-0.447-1-1v-8  c0-0.553,0.447-1,1-1S59,63.447,59,64z M59,78v10c0,0.553-0.447,1-1,1s-1-0.447-1-1V78c0-0.553,0.447-1,1-1S59,77.447,59,78z M62,78  v9c0,0.553-0.447,1-1,1s-1-0.447-1-1v-9c0-0.553,0.447-1,1-1S62,77.447,62,78z M43,57v1c0,0.553-0.448,1-1,1s-1-0.447-1-1v-1  c0-0.553,0.448-1,1-1S43,56.447,43,57z M57,58v-1c0-0.553,0.447-1,1-1s1,0.447,1,1v1c0,0.553-0.447,1-1,1S57,58.553,57,58z M57,54  v-1c0-0.553,0.447-1,1-1s1,0.447,1,1v1c0,0.553-0.447,1-1,1S57,54.553,57,54z M54,58v-1c0-0.553,0.447-1,1-1s1,0.447,1,1v1  c0,0.553-0.447,1-1,1S54,58.553,54,58z M54,54v-1c0-0.553,0.447-1,1-1s1,0.447,1,1v1c0,0.553-0.447,1-1,1S54,54.553,54,54z M51,54  v-1c0-0.553,0.447-1,1-1s1,0.447,1,1v1c0,0.553-0.447,1-1,1S51,54.553,51,54z M49,53v1c0,0.553-0.448,1-1,1s-1-0.447-1-1v-1  c0-0.553,0.448-1,1-1S49,52.447,49,53z M43,53v1c0,0.553-0.448,1-1,1s-1-0.447-1-1v-1c0-0.553,0.448-1,1-1S43,52.447,43,53z M46,53  v1c0,0.553-0.448,1-1,1s-1-0.447-1-1v-1c0-0.553,0.448-1,1-1S46,52.447,46,53z M46,57v1c0,0.553-0.448,1-1,1s-1-0.447-1-1v-1  c0-0.553,0.448-1,1-1S46,56.447,46,57z M43,78v10c0,0.553-0.448,1-1,1s-1-0.447-1-1V78c0-0.553,0.448-1,1-1S43,77.447,43,78z M40,78  v9c0,0.553-0.448,1-1,1s-1-0.447-1-1v-9c0-0.553,0.448-1,1-1S40,77.447,40,78z M43,64v8c0,0.553-0.448,1-1,1s-1-0.447-1-1v-8  c0-0.553,0.448-1,1-1S43,63.447,43,64z M40,64v8c0,0.553-0.448,1-1,1s-1-0.447-1-1v-8c0-0.553,0.448-1,1-1S40,63.447,40,64z"/>
-                            </svg>
-
-                            <p>Ron Jeremy Hyatt as he spent his youth growing up in Queens, New York.</p>
+                                <p>Many people have gone down in history for their talent, beliefs or simply the way they chose to live their life. The path they took to greatness may not have always been an easy one, but it was one they wouldn't dare think to regret.</p>
+                            </div>
 
                         </div>
                         
@@ -160,75 +153,118 @@
 
                         <div class="content-wrap row">
                             
-                            <svg class="education" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 125 125" enable-background="new 0 0 100 100" xml:space="preserve">
-                                <defs>
-                                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" stop-color="#FEE3BF" />
-                                        <stop offset="100%" stop-color="#FC9207" />
-                                    </linearGradient>
-                                    <filter id="glow2" x="-10%" y="-10%" width="200%" height="200%">
-                                        <feOffset result="offOut" in="SourceGraphic" dx="1" dy="1" />
-                                        <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" />
-                                        <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-                                    </filter>
-                                </defs>
-                                <path filter="url(#glow2)" d="M94.646,41.043L50.507,23.081c-0.32-0.139-0.7-0.139-1.031,0L5.354,41.043c-0.519,0.213-0.855,0.721-0.85,1.282  c0.005,0.561,0.358,1.063,0.881,1.261l17.801,6.753v13.671c0,6.689,13.03,13.014,26.809,13.014c13.783,0,26.813-6.325,26.813-13.014  V50.498l9.659-3.745v10.599c-1.635,0.572-2.825,2.094-2.825,3.921c0,1.539,0.876,2.837,2.115,3.569l-1.906,3.034  c-0.262,0.422-0.279,0.951-0.037,1.389c0.24,0.433,0.699,0.705,1.195,0.705h5.663c0.027,0,0.048-0.005,0.07,0  c0.753,0,1.367-0.614,1.367-1.368c0-0.411-0.181-0.78-0.47-1.031l-1.719-2.73c1.244-0.732,2.121-2.031,2.121-3.569  c0-1.827-1.197-3.35-2.838-3.921V45.69l5.423-2.105c0.518-0.203,0.866-0.705,0.871-1.266C95.501,41.758,95.164,41.251,94.646,41.043  z M74.073,64.009c0,4.044-10.338,10.279-24.078,10.279c-13.735,0-24.073-6.235-24.073-10.279V51.374l24.1,9.141  c0.154,0.059,0.32,0.091,0.485,0.091c0.166,0,0.337-0.032,0.497-0.091l23.069-8.954V64.009z M89.304,61.274  c0,0.807-0.657,1.464-1.469,1.464c-0.807,0-1.459-0.657-1.459-1.464c0-0.807,0.651-1.464,1.459-1.464  C88.647,59.81,89.304,60.467,89.304,61.274z M50.502,57.775L9.612,42.265l40.383-16.444l40.43,16.455L50.502,57.775z"/>
-                            </svg>
-
-                            <p>Ron attended Queens College where he earned a Bachelor's degree in theater as well as a Master's degree in special education.</p>
-
-                        </div>
-                        
-                    </article>
-
-                    <article class="about-section">
-
-                        <div class="content-wrap row">
-                            
-                                <svg class="teacher" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Your_Icon" x="0px" y="0px" viewBox="0 0 125 125" enable-background="new 0 0 100 88.637" xml:space="preserve">
+                            <div class="black-box">
+                                <svg class="newYork" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Your_Icon" x="0px" y="0px" viewBox="0 0 125 125" enable-background="new 0 0 100 100" xml:space="preserve">    
                                     <defs>
-                                        <linearGradient id="gradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
                                             <stop offset="0%" stop-color="#FEE3BF" />
-                                            <stop offset="100%" stop-color="#FC9207" />
+                                            <stop offset="100%" stop-color="#f3552a" />
                                         </linearGradient>
-                                        <filter id="glow3" x="-10%" y="-10%" width="200%" height="200%">
-                                            <feOffset result="offOut" in="SourceGraphic" dx="1" dy="1" />
-                                            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="4" />
-                                            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-                                        </filter>
-                                    </defs>
-                                    <path filter="url(#glow3)" fill="#000000" d="M97.728,0H2.273C1.017,0,0,1.017,0,2.273v68.208c0,0.604,0.24,1.183,0.668,1.609  c0.426,0.426,1.003,0.663,1.605,0.663c0.002,0,0.004,0,0.006,0l8.075-0.024c-0.608,1.969-1.219,4.006-1.793,6.018  c-0.459,1.602-0.267,3.289,0.546,4.749c0.81,1.461,2.144,2.517,3.751,2.975c0.521,0.155,1.112,0.239,1.711,0.239  c1.378,0,2.679-0.462,3.735-1.249l-0.091,0.501c-0.222,1.234,0.599,2.417,1.835,2.639c0.135,0.024,0.271,0.036,0.404,0.036  c1.079,0,2.038-0.771,2.235-1.871L26.8,63.896c0.209-1.159-0.501-2.284-1.638-2.595c-1.143-0.304-2.319,0.3-2.73,1.4l-1.782,4.787  c-1.385,3.522-3.101,8.74-4.443,13.441c-0.213,0.746-0.895,1.234-1.638,1.234c-0.153,0-0.311-0.019-0.468-0.067  c-0.905-0.257-1.429-1.198-1.169-2.104c0.732-2.57,3.434-11.736,5.349-16.5c0.943-2.339,1.882-4.248,2.672-5.042  c2.694-2.694,5.447-2.771,5.75-2.771h11.364c0.004,0,0.007,0,0.011,0h3.389c0,0,0.006,0,0.009,0h6.818c0.004,0,0.006,0,0.011,0  h3.736l10.853-13.023c0.338-0.404,0.821-0.613,1.308-0.613c0.386,0,0.774,0.129,1.094,0.396c0.724,0.604,0.821,1.678,0.218,2.401  L54.148,58.479c-0.324,0.391-0.804,0.612-1.31,0.612c0,0-0.225,0-0.57,0c-0.335,0-0.788,0-1.274,0h-5.615  c-0.674,0-1.316,0.3-1.747,0.819c-0.433,0.52-0.61,1.203-0.488,1.866l4.617,25c0.202,1.095,1.158,1.86,2.232,1.86  c0.138,0,0.275-0.012,0.415-0.038c1.234-0.229,2.051-1.414,1.822-2.647l-2.437-13.197h47.934c1.256,0,2.272-1.017,2.272-2.272V2.273  C100,1.017,98.983,0,97.728,0z M95.454,68.209H48.953l-0.844-4.572h4.16h0.57c1.859,0,3.608-0.817,4.801-2.246l11.363-13.637  c1.07-1.282,1.576-2.903,1.425-4.567c-0.15-1.66-0.938-3.165-2.222-4.235C67.079,38.015,65.658,37.5,64.2,37.5  c-1.86,0-3.611,0.821-4.801,2.25l-9.488,11.386h-0.868h-0.004h-0.746h-6.818h-0.739h-0.006h-1.914h-0.004h-0.746H26.702  c-2.35,0-5.939,1.078-8.964,4.102c-0.521,0.523-1.7,1.7-3.697,6.627c-0.573,1.409-1.381,3.702-2.266,6.398  c-0.138-0.024-0.264-0.082-0.411-0.082c-0.002,0-0.004,0-0.007,0l-6.812,0.021V4.545h90.909V68.209z"/>
-                                    <path fill="#000000" d="M39.331,17.951h29.623c1.256,0,2.272-1.017,2.272-2.273c0-1.256-1.017-2.272-2.272-2.272H39.331  c-1.256,0-2.273,1.017-2.273,2.272C37.058,16.935,38.075,17.951,39.331,17.951z"/>
-                                    <path fill="#000000" d="M51.362,27.197c0,1.256,1.017,2.273,2.273,2.273h36.203c1.257,0,2.273-1.017,2.273-2.273  c0-1.256-1.017-2.272-2.273-2.272H53.636C52.379,24.925,51.362,25.941,51.362,27.197z"/>
-                                    <path fill="#000000" d="M34.655,48.864c5.953,0,10.795-4.843,10.795-10.796s-4.843-10.795-10.795-10.795  s-10.795,4.843-10.795,10.795S28.702,48.864,34.655,48.864z M34.655,31.818c3.447,0,6.25,2.803,6.25,6.25s-2.803,6.25-6.25,6.25  s-6.25-2.803-6.25-6.25S31.208,31.818,34.655,31.818z"/>
-                                </svg>
-
-                            <p>He taught special education classes and was a regular substitute at numerous schools in New York City until he quit to pursue an acting career.</p>
-
-                        </div>
-                        
-                    </article>
-
-                    <article class="about-section">
-
-                        <div class="content-wrap row">
-                            
-                                <svg class="playboy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 125 125" enable-background="new 0 0 100 100" xml:space="preserve">
-                                    <defs>
-                                        <linearGradient id="gradient4" x1="0%" y1="0%" x2="0%" y2="100%">
-                                            <stop offset="0%" stop-color="#FEE3BF" />
-                                            <stop offset="100%" stop-color="#FC9207" />
-                                        </linearGradient>
-                                        <filter id="glow4" x="-10%" y="-10%" width="200%" height="200%">
+                                        <filter id="glow1" x="-10%" y="-10%" width="200%" height="200%">
                                             <feOffset result="offOut" in="SourceGraphic" dx="1" dy="1" />
                                             <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" />
                                             <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
                                         </filter>
                                     </defs>
-                                    <path filter="url(#glow4)" d="M98.93,69.584l-9.774-41.812c-0.039-0.166-0.119-0.319-0.233-0.445c-5.56-6.115-11.858-9.216-18.72-9.216   c-9.882,0-17.836,6.398-20.202,8.52c-2.365-2.122-10.319-8.52-20.202-8.52c-6.862,0-13.16,3.101-18.719,9.216   c-0.115,0.126-0.195,0.279-0.234,0.445l-9.818,42c-0.097,0.413,0.078,0.843,0.437,1.071c0.357,0.227,0.821,0.204,1.155-0.058   c8.077-6.346,16.243-9.563,24.271-9.563c2.388,0,4.614,0.3,6.68,0.777c-7.889-1.049-18.173,0.773-30.186,10.214   c-0.435,0.341-0.51,0.97-0.168,1.404s0.97,0.511,1.404,0.168c16.791-13.192,29.735-11.046,37.266-7.379   c-7.705-3.123-20.183-4.015-36.501,8.807c-0.435,0.341-0.51,0.97-0.168,1.404s0.97,0.51,1.404,0.168   c16.133-12.677,28.026-11.524,35.094-8.423c-1.439-0.498-3.049-0.895-4.834-1.113c-8.927-1.095-18.846,2.597-29.495,10.964   c-0.435,0.341-0.51,0.97-0.168,1.404s0.97,0.511,1.404,0.168c11.145-8.757,21.702-12.249,30.523-10.095   c6.627,1.617,10.038,5.882,10.07,5.923c0.379,0.486,1.2,0.486,1.579,0c0.042-0.054,4.255-5.36,12.577-6.38   c8.37-1.018,17.8,2.525,28.016,10.552C91.565,79.931,91.783,80,91.999,80c0.297,0,0.59-0.131,0.787-0.382   c0.342-0.435,0.266-1.063-0.168-1.404c-10.65-8.368-20.57-12.059-29.495-10.964c-1.496,0.184-2.862,0.496-4.115,0.884   c0.855-0.342,1.769-0.656,2.75-0.918c9.497-2.534,20.433,0.777,31.624,9.57C93.565,76.931,93.783,77,93.999,77   c0.297,0,0.59-0.131,0.787-0.382c0.342-0.435,0.266-1.063-0.168-1.404c-16.311-12.816-28.784-11.931-36.49-8.812   c7.534-3.664,20.474-5.801,37.254,7.384C95.565,73.931,95.783,74,95.999,74c0.297,0,0.59-0.131,0.787-0.382   c0.342-0.435,0.266-1.063-0.168-1.404c-12.011-9.438-22.293-11.262-30.182-10.215c2.063-0.477,4.289-0.776,6.675-0.776   c8.027,0,16.193,3.218,24.271,9.563C97.562,70.928,97.781,71,98,71c0.01,0.001,0.015,0,0.02,0c0.553,0,1-0.447,1-1   C99.02,69.852,98.987,69.711,98.93,69.584z M73.111,59.223c-12.323,0-20.657,7.001-23.111,9.355   c-2.455-2.354-10.791-9.355-23.111-9.355c-7.745,0-15.567,2.799-23.289,8.326l9.132-39.066c5.121-5.555,10.861-8.371,17.065-8.371   c9.7,0,17.672,6.907,19.208,8.325C49.056,32.715,49.482,67,50,67s0.944-34.285,0.995-38.563c1.536-1.418,9.509-8.325,19.208-8.325   c6.204,0,11.944,2.816,17.065,8.371L96.4,67.549C88.679,62.021,80.855,59.223,73.111,59.223z"/>
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                </g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <path filter="url(#glow1)" d="M62.397,31.082c-0.512-0.219-1.096,0.015-1.315,0.521c-0.219,0.507,0.014,1.095,0.521,1.315C73.205,37.939,81,49.224,81,61  c0,11.01-6.085,20.9-15,26.411V75c0-0.553-0.447-1-1-1V61c0-0.553-0.447-1-1-1h-2V50c0-0.552-0.447-1-1-1h-1v-4c0-0.552-0.447-1-1-1  h-1v-2c0-0.552-0.447-1-1-1h-1.272C55.236,39.291,54,33.923,54,23c0-0.552-0.447-1-1-1h-2V7c0-0.552-0.448-1-1-1s-1,0.448-1,1v15h-2  c-0.552,0-1,0.448-1,1c0,10.926-1.236,16.295-1.728,18H43c-0.552,0-1,0.448-1,1v2h-1c-0.552,0-1,0.448-1,1v4h-1  c-0.552,0-1,0.448-1,1v10h-2c-0.552,0-1,0.447-1,1v13c-0.552,0-1,0.447-1,1v12.379C25.083,81.862,19,71.99,19,61  c0-11.764,7.795-23.049,19.398-28.083c0.507-0.22,0.739-0.809,0.52-1.315c-0.22-0.506-0.81-0.74-1.315-0.52  C25.279,36.428,17,48.451,17,61c0,17.888,15.136,33,33.051,33C68.22,94,83,79.196,83,61C83,48.438,74.721,36.416,62.397,31.082z   M56,76h8v12c0,0.174,0.056,0.328,0.133,0.471c-2.539,1.34-5.271,2.338-8.133,2.923V76z M63,74h-7V62h7V74z M52.003,24  c0.065,9.547,1.061,14.748,1.647,17H51V24H52.003z M47.997,24H49v17h-2.65C46.937,38.748,47.931,33.547,47.997,24z M44,43h1h10h1v1  H44V43z M42,46h16v3H42V46z M37,62h7v12h-7V62z M36,88V76h8v15.378c-2.858-0.59-5.584-1.592-8.119-2.929  C35.951,88.313,36,88.164,36,88z M49,91.972V57c0-0.553-0.448-1-1-1s-1,0.447-1,1v34.842c-0.335-0.034-0.667-0.082-1-0.128V75V61  c0-0.553-0.448-1-1-1h-5v-9h20v9h-5c-0.553,0-1,0.447-1,1v14v16.726c-0.332,0.045-0.665,0.09-1,0.123V57c0-0.553-0.447-1-1-1  s-1,0.447-1,1v34.975C50.684,91.985,50.369,92,50.051,92C49.699,92,49.35,91.985,49,91.972z M61,63c0.553,0,1,0.447,1,1v8  c0,0.553-0.447,1-1,1s-1-0.447-1-1v-8C60,63.447,60.447,63,61,63z M59,64v8c0,0.553-0.447,1-1,1s-1-0.447-1-1v-8  c0-0.553,0.447-1,1-1S59,63.447,59,64z M59,78v10c0,0.553-0.447,1-1,1s-1-0.447-1-1V78c0-0.553,0.447-1,1-1S59,77.447,59,78z M62,78  v9c0,0.553-0.447,1-1,1s-1-0.447-1-1v-9c0-0.553,0.447-1,1-1S62,77.447,62,78z M43,57v1c0,0.553-0.448,1-1,1s-1-0.447-1-1v-1  c0-0.553,0.448-1,1-1S43,56.447,43,57z M57,58v-1c0-0.553,0.447-1,1-1s1,0.447,1,1v1c0,0.553-0.447,1-1,1S57,58.553,57,58z M57,54  v-1c0-0.553,0.447-1,1-1s1,0.447,1,1v1c0,0.553-0.447,1-1,1S57,54.553,57,54z M54,58v-1c0-0.553,0.447-1,1-1s1,0.447,1,1v1  c0,0.553-0.447,1-1,1S54,58.553,54,58z M54,54v-1c0-0.553,0.447-1,1-1s1,0.447,1,1v1c0,0.553-0.447,1-1,1S54,54.553,54,54z M51,54  v-1c0-0.553,0.447-1,1-1s1,0.447,1,1v1c0,0.553-0.447,1-1,1S51,54.553,51,54z M49,53v1c0,0.553-0.448,1-1,1s-1-0.447-1-1v-1  c0-0.553,0.448-1,1-1S49,52.447,49,53z M43,53v1c0,0.553-0.448,1-1,1s-1-0.447-1-1v-1c0-0.553,0.448-1,1-1S43,52.447,43,53z M46,53  v1c0,0.553-0.448,1-1,1s-1-0.447-1-1v-1c0-0.553,0.448-1,1-1S46,52.447,46,53z M46,57v1c0,0.553-0.448,1-1,1s-1-0.447-1-1v-1  c0-0.553,0.448-1,1-1S46,56.447,46,57z M43,78v10c0,0.553-0.448,1-1,1s-1-0.447-1-1V78c0-0.553,0.448-1,1-1S43,77.447,43,78z M40,78  v9c0,0.553-0.448,1-1,1s-1-0.447-1-1v-9c0-0.553,0.448-1,1-1S40,77.447,40,78z M43,64v8c0,0.553-0.448,1-1,1s-1-0.447-1-1v-8  c0-0.553,0.448-1,1-1S43,63.447,43,64z M40,64v8c0,0.553-0.448,1-1,1s-1-0.447-1-1v-8c0-0.553,0.448-1,1-1S40,63.447,40,64z"/>
                                 </svg>
 
-                            <p>His defining moment came when his ex-girlfriend sent a photo of Ron to Playgirl Magazine, the same magazine which he would later pose for.</p>
+                                <p>Ron Jeremy Hyatt as he spent his youth growing up in Queens, New York.</p>
+                            </div>
+
+                        </div>
+                        
+                    </article>
+
+                    <article class="about-section">
+
+                        <div class="content-wrap row">
+
+                            <div class="black-box">   
+                                <svg class="education" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 125 125" enable-background="new 0 0 100 100" xml:space="preserve">
+                                    <defs>
+                                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#FEE3BF" />
+                                            <stop offset="100%" stop-color="#f3552a" />
+                                        </linearGradient>
+                                        <filter id="glow2" x="-10%" y="-10%" width="200%" height="200%">
+                                            <feOffset result="offOut" in="SourceGraphic" dx="1" dy="1" />
+                                            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" />
+                                            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                                        </filter>
+                                    </defs>
+                                    <path filter="url(#glow2)" d="M94.646,41.043L50.507,23.081c-0.32-0.139-0.7-0.139-1.031,0L5.354,41.043c-0.519,0.213-0.855,0.721-0.85,1.282  c0.005,0.561,0.358,1.063,0.881,1.261l17.801,6.753v13.671c0,6.689,13.03,13.014,26.809,13.014c13.783,0,26.813-6.325,26.813-13.014  V50.498l9.659-3.745v10.599c-1.635,0.572-2.825,2.094-2.825,3.921c0,1.539,0.876,2.837,2.115,3.569l-1.906,3.034  c-0.262,0.422-0.279,0.951-0.037,1.389c0.24,0.433,0.699,0.705,1.195,0.705h5.663c0.027,0,0.048-0.005,0.07,0  c0.753,0,1.367-0.614,1.367-1.368c0-0.411-0.181-0.78-0.47-1.031l-1.719-2.73c1.244-0.732,2.121-2.031,2.121-3.569  c0-1.827-1.197-3.35-2.838-3.921V45.69l5.423-2.105c0.518-0.203,0.866-0.705,0.871-1.266C95.501,41.758,95.164,41.251,94.646,41.043  z M74.073,64.009c0,4.044-10.338,10.279-24.078,10.279c-13.735,0-24.073-6.235-24.073-10.279V51.374l24.1,9.141  c0.154,0.059,0.32,0.091,0.485,0.091c0.166,0,0.337-0.032,0.497-0.091l23.069-8.954V64.009z M89.304,61.274  c0,0.807-0.657,1.464-1.469,1.464c-0.807,0-1.459-0.657-1.459-1.464c0-0.807,0.651-1.464,1.459-1.464  C88.647,59.81,89.304,60.467,89.304,61.274z M50.502,57.775L9.612,42.265l40.383-16.444l40.43,16.455L50.502,57.775z"/>
+                                </svg>
+
+                                <p>Ron attended Queens College where he earned a Bachelor's degree in theater as well as a Master's degree in special education.</p>
+                            </div>
+
+                        </div>
+                        
+                    </article>
+
+                    <article class="about-section">
+
+                        <div class="content-wrap row">
+                                
+                                <div class="black-box">
+                                    <svg class="teacher" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Your_Icon" x="0px" y="0px" viewBox="0 0 125 125" enable-background="new 0 0 100 88.637" xml:space="preserve">
+                                        <defs>
+                                            <linearGradient id="gradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="0%" stop-color="#FEE3BF" />
+                                                <stop offset="100%" stop-color="#f3552a" />
+                                            </linearGradient>
+                                            <filter id="glow3" x="-10%" y="-10%" width="200%" height="200%">
+                                                <feOffset result="offOut" in="SourceGraphic" dx="1" dy="1" />
+                                                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="4" />
+                                                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                                            </filter>
+                                        </defs>
+                                        <path filter="url(#glow3)" fill="#000000" d="M97.728,0H2.273C1.017,0,0,1.017,0,2.273v68.208c0,0.604,0.24,1.183,0.668,1.609  c0.426,0.426,1.003,0.663,1.605,0.663c0.002,0,0.004,0,0.006,0l8.075-0.024c-0.608,1.969-1.219,4.006-1.793,6.018  c-0.459,1.602-0.267,3.289,0.546,4.749c0.81,1.461,2.144,2.517,3.751,2.975c0.521,0.155,1.112,0.239,1.711,0.239  c1.378,0,2.679-0.462,3.735-1.249l-0.091,0.501c-0.222,1.234,0.599,2.417,1.835,2.639c0.135,0.024,0.271,0.036,0.404,0.036  c1.079,0,2.038-0.771,2.235-1.871L26.8,63.896c0.209-1.159-0.501-2.284-1.638-2.595c-1.143-0.304-2.319,0.3-2.73,1.4l-1.782,4.787  c-1.385,3.522-3.101,8.74-4.443,13.441c-0.213,0.746-0.895,1.234-1.638,1.234c-0.153,0-0.311-0.019-0.468-0.067  c-0.905-0.257-1.429-1.198-1.169-2.104c0.732-2.57,3.434-11.736,5.349-16.5c0.943-2.339,1.882-4.248,2.672-5.042  c2.694-2.694,5.447-2.771,5.75-2.771h11.364c0.004,0,0.007,0,0.011,0h3.389c0,0,0.006,0,0.009,0h6.818c0.004,0,0.006,0,0.011,0  h3.736l10.853-13.023c0.338-0.404,0.821-0.613,1.308-0.613c0.386,0,0.774,0.129,1.094,0.396c0.724,0.604,0.821,1.678,0.218,2.401  L54.148,58.479c-0.324,0.391-0.804,0.612-1.31,0.612c0,0-0.225,0-0.57,0c-0.335,0-0.788,0-1.274,0h-5.615  c-0.674,0-1.316,0.3-1.747,0.819c-0.433,0.52-0.61,1.203-0.488,1.866l4.617,25c0.202,1.095,1.158,1.86,2.232,1.86  c0.138,0,0.275-0.012,0.415-0.038c1.234-0.229,2.051-1.414,1.822-2.647l-2.437-13.197h47.934c1.256,0,2.272-1.017,2.272-2.272V2.273  C100,1.017,98.983,0,97.728,0z M95.454,68.209H48.953l-0.844-4.572h4.16h0.57c1.859,0,3.608-0.817,4.801-2.246l11.363-13.637  c1.07-1.282,1.576-2.903,1.425-4.567c-0.15-1.66-0.938-3.165-2.222-4.235C67.079,38.015,65.658,37.5,64.2,37.5  c-1.86,0-3.611,0.821-4.801,2.25l-9.488,11.386h-0.868h-0.004h-0.746h-6.818h-0.739h-0.006h-1.914h-0.004h-0.746H26.702  c-2.35,0-5.939,1.078-8.964,4.102c-0.521,0.523-1.7,1.7-3.697,6.627c-0.573,1.409-1.381,3.702-2.266,6.398  c-0.138-0.024-0.264-0.082-0.411-0.082c-0.002,0-0.004,0-0.007,0l-6.812,0.021V4.545h90.909V68.209z"/>
+                                        <path fill="#000000" d="M39.331,17.951h29.623c1.256,0,2.272-1.017,2.272-2.273c0-1.256-1.017-2.272-2.272-2.272H39.331  c-1.256,0-2.273,1.017-2.273,2.272C37.058,16.935,38.075,17.951,39.331,17.951z"/>
+                                        <path fill="#000000" d="M51.362,27.197c0,1.256,1.017,2.273,2.273,2.273h36.203c1.257,0,2.273-1.017,2.273-2.273  c0-1.256-1.017-2.272-2.273-2.272H53.636C52.379,24.925,51.362,25.941,51.362,27.197z"/>
+                                        <path fill="#000000" d="M34.655,48.864c5.953,0,10.795-4.843,10.795-10.796s-4.843-10.795-10.795-10.795  s-10.795,4.843-10.795,10.795S28.702,48.864,34.655,48.864z M34.655,31.818c3.447,0,6.25,2.803,6.25,6.25s-2.803,6.25-6.25,6.25  s-6.25-2.803-6.25-6.25S31.208,31.818,34.655,31.818z"/>
+                                    </svg>
+
+                                    <p>He taught special education classes and was a regular substitute at numerous schools in New York City until he quit to pursue an acting career.</p>
+                                </div>
+
+                        </div>
+                        
+                    </article>
+
+                    <article class="about-section">
+
+                        <div class="content-wrap row">
+                                
+                                <div class="black-box">
+                                    <svg class="playboy" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 125 125" enable-background="new 0 0 100 100" xml:space="preserve">
+                                        <defs>
+                                            <linearGradient id="gradient4" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                <stop offset="0%" stop-color="#FEE3BF" />
+                                                <stop offset="100%" stop-color="#f3552a" />
+                                            </linearGradient>
+                                            <filter id="glow4" x="-10%" y="-10%" width="200%" height="200%">
+                                                <feOffset result="offOut" in="SourceGraphic" dx="1" dy="1" />
+                                                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5" />
+                                                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                                            </filter>
+                                        </defs>
+                                        <path filter="url(#glow4)" d="M98.93,69.584l-9.774-41.812c-0.039-0.166-0.119-0.319-0.233-0.445c-5.56-6.115-11.858-9.216-18.72-9.216   c-9.882,0-17.836,6.398-20.202,8.52c-2.365-2.122-10.319-8.52-20.202-8.52c-6.862,0-13.16,3.101-18.719,9.216   c-0.115,0.126-0.195,0.279-0.234,0.445l-9.818,42c-0.097,0.413,0.078,0.843,0.437,1.071c0.357,0.227,0.821,0.204,1.155-0.058   c8.077-6.346,16.243-9.563,24.271-9.563c2.388,0,4.614,0.3,6.68,0.777c-7.889-1.049-18.173,0.773-30.186,10.214   c-0.435,0.341-0.51,0.97-0.168,1.404s0.97,0.511,1.404,0.168c16.791-13.192,29.735-11.046,37.266-7.379   c-7.705-3.123-20.183-4.015-36.501,8.807c-0.435,0.341-0.51,0.97-0.168,1.404s0.97,0.51,1.404,0.168   c16.133-12.677,28.026-11.524,35.094-8.423c-1.439-0.498-3.049-0.895-4.834-1.113c-8.927-1.095-18.846,2.597-29.495,10.964   c-0.435,0.341-0.51,0.97-0.168,1.404s0.97,0.511,1.404,0.168c11.145-8.757,21.702-12.249,30.523-10.095   c6.627,1.617,10.038,5.882,10.07,5.923c0.379,0.486,1.2,0.486,1.579,0c0.042-0.054,4.255-5.36,12.577-6.38   c8.37-1.018,17.8,2.525,28.016,10.552C91.565,79.931,91.783,80,91.999,80c0.297,0,0.59-0.131,0.787-0.382   c0.342-0.435,0.266-1.063-0.168-1.404c-10.65-8.368-20.57-12.059-29.495-10.964c-1.496,0.184-2.862,0.496-4.115,0.884   c0.855-0.342,1.769-0.656,2.75-0.918c9.497-2.534,20.433,0.777,31.624,9.57C93.565,76.931,93.783,77,93.999,77   c0.297,0,0.59-0.131,0.787-0.382c0.342-0.435,0.266-1.063-0.168-1.404c-16.311-12.816-28.784-11.931-36.49-8.812   c7.534-3.664,20.474-5.801,37.254,7.384C95.565,73.931,95.783,74,95.999,74c0.297,0,0.59-0.131,0.787-0.382   c0.342-0.435,0.266-1.063-0.168-1.404c-12.011-9.438-22.293-11.262-30.182-10.215c2.063-0.477,4.289-0.776,6.675-0.776   c8.027,0,16.193,3.218,24.271,9.563C97.562,70.928,97.781,71,98,71c0.01,0.001,0.015,0,0.02,0c0.553,0,1-0.447,1-1   C99.02,69.852,98.987,69.711,98.93,69.584z M73.111,59.223c-12.323,0-20.657,7.001-23.111,9.355   c-2.455-2.354-10.791-9.355-23.111-9.355c-7.745,0-15.567,2.799-23.289,8.326l9.132-39.066c5.121-5.555,10.861-8.371,17.065-8.371   c9.7,0,17.672,6.907,19.208,8.325C49.056,32.715,49.482,67,50,67s0.944-34.285,0.995-38.563c1.536-1.418,9.509-8.325,19.208-8.325   c6.204,0,11.944,2.816,17.065,8.371L96.4,67.549C88.679,62.021,80.855,59.223,73.111,59.223z"/>
+                                    </svg>
+
+                                    <p>His defining moment came when his ex-girlfriend sent a photo of Ron to Playgirl Magazine, the same magazine which he would later pose for.</p>
+                                </div>
 
                         </div>
                         
@@ -237,10 +273,12 @@
                     <article class="about-section row">
 
                         <div class="content-wrap row">
-
-                            <p>Ron Jeremy's past may be one which is subject to scrutiny and criticism, but one cannot deny his passion and drive for success. It is a trait to be admired, and Ron De Jeremy wants to encourage the people to have the same fearlessness as Mr. Jeremy himself. </p>
                             
-                            <h1>Now is your chance.</h1>
+                            <div class="black-box">
+                                <p>Ron Jeremy's past may be one which is subject to scrutiny and criticism, but one cannot deny his passion and drive for success. It is a trait to be admired, and Ron De Jeremy wants to encourage the people to have the same fearlessness as Mr. Jeremy himself. </p>
+                                
+                                <h1>Now is your chance.</h1>
+                            </div>
 
                         </div>
                         
@@ -264,15 +302,15 @@
 
                             <div class="drink-box">
                                 
-                                <img src="assets/img/drink1.png" alt="Drink 1">
+                                <img src="assets/img/drink1_big.png" alt="Rum & Lime">
 
                             </div>
 
                             <div class="drink-box">
                                 
-                                <h2>the ice cap</h2>
+                                <h2>rum &amp; lime</h2>
 
-                                <p class="drink">A simplistic drink anyone can appreciate. Heighten the taste of Ron De Jeremy with a few ice cubes to bring out subtle hints of raw sugar cane and vanilla. Enjoy every sip as you make your night one worth remembering.</p>
+                                <p class="drink">For a refreshing drink grab a large lime and cut off the ends. Cut the lime in half continuously until there are 4 pieces. Add lime pieces and two tablespoons of powder sugar into the glass. Use a pestle to squeeze the juice out of lime pieces. Fill the glass with crushed ice and add 2 ounces of Ron De Jeremy and stir.</p>
 
                             </div>                            
 
@@ -288,15 +326,15 @@
 
                             <div class="drink-box">
                                 
-                                <img src="assets/img/drink2.png" alt="Drink 1">
+                                <img src="assets/img/drink2_big.png" alt="Spiked Cola">
 
                             </div>
 
                             <div class="drink-box">
                                 
-                                <h2>the ice cap</h2>
+                                <h2>Spiked Cola</h2>
 
-                                <p class="drink">A simplistic drink anyone can appreciate. Heighten the taste of Ron De Jeremy with a few ice cubes to bring out subtle hints of raw sugar cane and vanilla. Enjoy every sip as you make your night one worth remembering.</p>
+                                <p class="drink">Some things are meant to be enjoyed in their purest form. Ron De Jeremy is no different. Experience the rich flavor of Ron De Jeremy when it comes straight out of the bottle.</p>
 
                             </div>                            
 
@@ -312,15 +350,15 @@
 
                             <div class="drink-box">
                                 
-                                <img src="assets/img/drink3.png" alt="Drink 1">
+                                <img src="assets/img/drink3_big.png" alt="The Straight Shooter">
 
                             </div>
 
                             <div class="drink-box">
                                 
-                                <h2>the ice cap</h2>
+                                <h2>the straight shooter</h2>
 
-                                <p class="drink">A simplistic drink anyone can appreciate. Heighten the taste of Ron De Jeremy with a few ice cubes to bring out subtle hints of raw sugar cane and vanilla. Enjoy every sip as you make your night one worth remembering.</p>
+                                <p class="drink">Some things are meant to be enjoyed in their purest form. Ron De Jeremy is no different. Experience the rich flavor of Ron De Jeremy when it comes straight out of the bottle.</p>
 
                             </div>                            
 
@@ -336,7 +374,7 @@
 
                             <div class="drink-box">
                                 
-                                <img src="assets/img/drink4.png" alt="Drink 1">
+                                <img src="assets/img/drink4_big.png" alt="The Ice Cap">
 
                             </div>
 
@@ -360,15 +398,15 @@
 
                             <div class="drink-box">
                                 
-                                <img src="assets/img/drink5.png" alt="Drink 1">
+                                <img src="assets/img/drink5_big.png" alt="Fizzle & a Spritz">
 
                             </div>
 
                             <div class="drink-box">
                                 
-                                <h2>the ice cap</h2>
+                                <h2>fizzle &amp; a spritz</h2>
 
-                                <p class="drink">A simplistic drink anyone can appreciate. Heighten the taste of Ron De Jeremy with a few ice cubes to bring out subtle hints of raw sugar cane and vanilla. Enjoy every sip as you make your night one worth remembering.</p>
+                                <p class="drink">Pour Ron De Jeremy rum and cola into a glass full of ice. Squeeze a lime over the top for a burst of extra flavor. Stir gently and let your taste buds enjoy.</p>
 
                             </div>                            
 
@@ -384,15 +422,15 @@
 
                             <div class="drink-box">
                                 
-                                <img src="assets/img/drink6.png" alt="Drink 1">
+                                <img src="assets/img/drink6_big.png" alt="Twister">
 
                             </div>
 
                             <div class="drink-box">
                                 
-                                <h2>the ice cap</h2>
+                                <h2>twister</h2>
 
-                                <p class="drink">A simplistic drink anyone can appreciate. Heighten the taste of Ron De Jeremy with a few ice cubes to bring out subtle hints of raw sugar cane and vanilla. Enjoy every sip as you make your night one worth remembering.</p>
+                                <p class="drink">For sweet pick me up, shake and strain the ingredients into a tall glass full of crushed ice. Add a squeeze of fresh lemon juice and garnish with slice of blood orange. Best served with a straw.</p>
 
                             </div>                            
 
@@ -414,6 +452,35 @@
 
                         <div class="content-wrap row">
 
+                            <div class="social-left">
+                                
+                                <i class="fa fa-instagram"></i>
+
+                                <p>Snuck into the Kaskade concert!<br/> #livelikeron</p>
+
+                            </div>
+
+                            <div class="social-center">
+                                
+                                <h2>did they #livelikeron?</h2>
+
+                                <img src="assets/img/social-1.jpg" alt="Placeholder" class="social-img"/>
+
+                            </div>
+
+                            <div class="social-right">
+                                
+                                <div class="thumbs">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    <span>Ron-worthy</span>
+                                </div>
+                                <div class="thumbs">
+                                    <i class="fa fa-thumbs-down"></i>
+                                    <span>No</span>
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </article>
@@ -422,6 +489,35 @@
 
                         <div class="content-wrap row">
 
+                            <div class="social-left">
+                                
+                                <i class="fa fa-instagram"></i>
+
+                                <p>No idea who's pool this is.<br/> #livelikeron</p>
+
+                            </div>
+
+                            <div class="social-center">
+                                
+                                <h2>did they #livelikeron?</h2>
+
+                                <img src="assets/img/social-2.jpg" alt="Placeholder" class="social-img"/>
+
+                            </div>
+
+                            <div class="social-right">
+                                
+                                <div class="thumbs">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    <span>Ron-worthy</span>
+                                </div>
+                                <div class="thumbs">
+                                    <i class="fa fa-thumbs-down"></i>
+                                    <span>No</span>
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </article>
@@ -430,6 +526,35 @@
 
                         <div class="content-wrap row">
 
+                            <div class="social-left">
+                                
+                                <i class="fa fa-twitter"></i>
+
+                                <p>DYED MY HAIR PURPLE Y'ALL.  Then took selfies in Time Square.<br/> #livelikeron</p>
+
+                            </div>
+
+                            <div class="social-center">
+                                
+                                <h2>did they #livelikeron?</h2>
+
+                                <img src="assets/img/social-3.jpg" alt="Placeholder" class="social-img"/>
+
+                            </div>
+
+                            <div class="social-right">
+                                
+                                <div class="thumbs">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    <span>Ron-worthy</span>
+                                </div>
+                                <div class="thumbs">
+                                    <i class="fa fa-thumbs-down"></i>
+                                    <span>No</span>
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </article>
@@ -437,6 +562,40 @@
                     <article class="social-section">
 
                         <div class="content-wrap row">
+
+                            <div class="social-left">
+                                
+                                <i class="fa fa-twitter"></i>
+
+                            </div>
+
+                            <div class="social-center">
+                                
+                                <h2>did they #livelikeron?</h2>
+
+                                <div class="tweet">
+                                    
+                                    <span class="tweet-text">Proud to be a 22 year old grape nuts lover. #livelikeron</span>
+
+                                    <span class="tweet-handle">@hellojessica</span>
+                                    <span class="tweet-date">july 30, 2014</span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="social-right">
+                                
+                                <div class="thumbs">
+                                    <i class="fa fa-thumbs-up"></i>
+                                    <span>Ron-worthy</span>
+                                </div>
+                                <div class="thumbs">
+                                    <i class="fa fa-thumbs-down"></i>
+                                    <span>No</span>
+                                </div>
+
+                            </div>
 
                         </div>
 
@@ -445,6 +604,28 @@
                 </section>
 
             </div><!-- END SOCIAL -->
+
+            <!-- FOOTER -->
+
+            <footer>
+
+                <div class="content-wrap row">
+
+                    <div class="footer-email">
+                        <a href="">info@oneeyedspirits.com</a>
+                    </div>
+
+                    <div class="footer-social">
+
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-instagram"></i>
+
+                    </div>
+
+                </div>
+
+            </footer><!-- END FOOTER -->
             
         </div><!-- END HUGE HUGE RIDICULOUS WRAPPER -->
 

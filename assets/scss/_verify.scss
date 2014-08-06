@@ -1,8 +1,7 @@
 // AGE VERIFICATION CONTAINER
 
 .age-verification {
-	opacity: 0;
-	z-index: 2;
+	z-index: 999;
 	position: fixed;
 	display: block;
 	left: 0;
@@ -17,7 +16,7 @@
 	box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 30px -20px;
 	@include transition(all .65s ease-in-out);
 	@include mq(tablet) {
-		min-height: 768px;
+		min-height: 670px;
 	}
 }
 
@@ -60,7 +59,7 @@
 	-webkit-animation-delay: .65s; /* Safari and Chrome */
     animation-delay: .65s;
     @include mq(tablet) {
-    	top: -90%;
+    	top: -97.5%;
     }
 }
 
@@ -86,8 +85,8 @@
 		display: none;
 		@include mq(tablet) {
 			display: block;
-			width: 188px;
-			margin-left: -94px;
+			width: 140px;
+			margin-left: -90px;
 		}
 	}
 	img {

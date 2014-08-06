@@ -3,7 +3,7 @@
 .social-bg {
 	float: left;
 	width: 100%;
-	height: 100%;
+	height: $social-height !important;
 	min-height: 768px;
 	// opacity: 0;
 	background: $blue-gradient;
@@ -17,6 +17,7 @@
 		float: left;
 		width: 100%;
 		height: 100% !important;
+		min-height: 768px;
 
 		// SOCIAL SECTION
 
@@ -28,6 +29,199 @@
 			padding-top: 125px;
 			background: transparent;
 			margin-left: 5px;
+		}
+	}
+}
+
+// SOCIAL SLIDE
+
+.social-left {
+	float: left;
+	@include span-columns(12);
+	@include box-sizing(border-box);
+	@include mq(tablet) {
+		padding-top: 120px;
+		text-align: right;
+		@include span-columns(3);
+	}
+	height: auto;
+	padding: 0 10px;
+	text-align: center;
+
+	// ICON
+
+	i {
+		color: $white;
+		font-size: 1.4em;
+		margin-bottom: 10px;
+	}
+
+	// TEXT
+
+	p {
+		width: 100%;
+		margin-left: 0;
+		text-align: center;
+		@include mq(tablet) {
+			text-align: right;
+		}
+	}
+}
+
+// SOCIAL CENTER
+
+.social-center {
+	float: left;
+	@include span-columns(12);
+	@include box-sizing(border-box);
+	@include mq(tablet) {
+		@include span-columns(6);
+	}
+	@include mq(desktop) {
+
+		// IMAGE
+
+		img {
+			position: relative;
+			left: 50%;
+			margin-left: -250px;
+		}
+	}
+	padding: 0 10px;
+
+	// HEADER
+
+	h2 {
+		width: 100%;
+		font-size: 1.2em;
+		margin: 0 0 10px 0;
+		@include mq(tablet) {
+			margin: 0 0 40px 0;
+		}
+	}
+
+	// TWEET BOX
+
+	.tweet {
+		width: 90%;
+		margin-left: 5%;
+		height: 300px;
+		border: 1px solid $neonGreen;
+		background: rgba($neonGreen, .5);
+		text-align: center;
+		margin-bottom: 5px;
+		padding: 10% 0;
+		@include box-sizing(border-box);
+		@include mq(desktop) {
+			position: relative;
+			width: 500px;
+			height: 500px;
+			left: 50%;
+			margin-left: -250px;
+		}
+	}
+}
+
+
+// TWEET TEXT
+
+.tweet-text {
+	float: left;
+	width: 90%;
+	margin-left: 5%;
+	font-family: $copy-font;
+	color: $white;
+	font-size: 1em;
+	@include mq(tablet) {
+		font-size: 1.2em;
+	}
+}
+
+// TWEET HANDLE 
+
+.tweet-handle {
+	float: left;
+	margin: 10% 0 0 5%;
+	font-family: $copy-font;
+	color: $white;
+	font-size: 1em;
+	width: 90%;
+	left: 5%;
+	text-transform: uppercase;
+	@include mq(tablet) {
+		font-size: 1.2em;
+	}
+}
+
+// TWEET DATE 
+
+.tweet-date {
+	float: left;
+	font-family: $copy-font;
+	color: $white;
+	width: 90%;
+	margin-left: 5%;
+	font-size: 1em;
+	width: 90%;
+	left: 5%;
+	text-transform: uppercase;
+	@include mq(tablet) {
+		font-size: 1.2em;
+	}
+}
+
+// SOCIAL RIGHT
+
+.social-right {
+	float: left;
+	@include span-columns(12);
+	@include box-sizing(border-box);
+	@include mq(tablet) {
+		padding-top: 120px;
+		@include span-columns(3);
+	}
+	height: auto;
+	padding: 0 10px;
+
+	// DIVS
+
+	.thumbs {
+		float: left;
+		width: 50%;
+		margin: 10px 0 10px 0;
+		text-align: center;
+
+		// THUMBS
+
+		i {
+			background: $green-gradient;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			-webkit-text-shadow: 0px 0px 20px $neonGreen;
+			text-shadow: 0px 0px 20px $neonGreen;
+			font-size: 1em;
+			cursor: pointer;
+			margin-right: 5px;
+			@include transition(all .3s ease-in-out);
+			&:hover {
+				opacity: .8;
+			}
+			@include mq(tablet) {
+				font-size: 2em;
+			}
+		}
+		@include mq(tablet) {
+			margin: 5px 0 5px 0;
+			width: 100%;
+			text-align: left;
+		}
+
+		// TEXT
+
+		span {
+			font-family: $copy-font;
+			font-size: 1em;
+			color: $white;
 		}
 	}
 }

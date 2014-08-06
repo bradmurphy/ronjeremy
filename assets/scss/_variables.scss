@@ -20,8 +20,9 @@
 
 // MISC
 
-$homescreen-side-width: calc(50% - 640px);
-$homescreen-bottom-width: calc(100% - 788px);
+$social-height: calc(100% - 76px);
+$homescreen-horizontal-width: calc(50% - 640px);
+$homescreen-vertical-width: calc(50% - 430px);
 $blue-gradient: -webkit-linear-gradient(top, #191919 0%,#08003e 50%,#191919 100%);
 $green-gradient: -webkit-linear-gradient(top, #b6ffdd 0%,#4affab 99%); 
 $orange-gradient: -webkit-linear-gradient(top, #fee3bf 0%,#fc9207 100%);
@@ -52,6 +53,7 @@ $grey: #7f8c8d;
 $charcoal: #333;
 $off-light: #444;
 
+$clockRed: #f3552a;
 $siteGray: #191919;
 $neonGreen: #36ffa2;
 $white: #fff;

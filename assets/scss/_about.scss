@@ -6,10 +6,7 @@
 	height: 100%;
 	min-height: 768px;
 	// opacity: 0;
-	background: url(../img/ronportrait-transparent.png) center bottom fixed no-repeat, $blue-gradient;
-	@include mq(tablet) {
-		background: url(../img/ronportrait.png) center bottom fixed no-repeat, $blue-gradient;
-	}
+	background: url(../img/ron-lines.png) center bottom fixed no-repeat, $blue-gradient;
 	
 	// ABOUT CONTAINER
 
@@ -17,6 +14,7 @@
 		float: left;
 		width: 100%;
 		height: 100% !important;
+		min-height: 768px;
 
 		// ABOUT SECTION
 
@@ -29,6 +27,25 @@
 			background: transparent;
 			margin-left: 5px;
 		}
+	}
+}
+
+// BLACK BOX FOR CONTENT 
+
+.black-box {
+	margin-top: 10%;
+	@include span-columns(12);
+	background: rgba($black, .4);
+	@include box-sizing(border-box);
+	-webkit-box-shadow: 1px 1px 20px 1px $black;
+	box-shadow: 1px 1px 20px 1px $black;
+	@include mq(tablet) {
+		@include span-columns(10);
+		@include shift(1);
+	}
+	@include mq(desktop) {
+		@include span-columns(8);
+		@include shift(2);
 	}
 }
 
@@ -104,7 +121,7 @@
 	}
 }
 
-// ICON ANIMATION
+// ICON ANIMATION 1
 
 .flickerIcon1 {
 	@include animation(iconAnimation1 1.5s ease-in-out);
@@ -131,6 +148,96 @@
 	}
 	100% {
 		fill: url(#gradient1);
+	}
+}
+
+// ICON ANIMATION 2
+
+.flickerIcon2 {
+	@include animation(iconAnimation2 1.5s ease-in-out);
+	@include animation-iteration-count(1);
+	-webkit-animation-delay: .5s;
+	animation-delay: .5s;
+}
+
+@include keyframes(iconAnimation2) {
+	0% {
+		fill: url(#gradient2);
+	}
+	15% {
+		fill: $black;
+	}
+	25% {
+		fill: url(#gradient2);
+	}
+	35% {
+		fill: $black;
+	}
+	50% {
+		fill: url(#gradient2);
+	}
+	100% {
+		fill: url(#gradient2);
+	}
+}
+
+// ICON ANIMATION 3
+
+.flickerIcon3 {
+	@include animation(iconAnimation3 1.5s ease-in-out);
+	@include animation-iteration-count(1);
+	-webkit-animation-delay: .5s;
+	animation-delay: .5s;
+}
+
+@include keyframes(iconAnimation3) {
+	0% {
+		fill: url(#gradient3);
+	}
+	15% {
+		fill: $black;
+	}
+	25% {
+		fill: url(#gradient3);
+	}
+	35% {
+		fill: $black;
+	}
+	50% {
+		fill: url(#gradient3);
+	}
+	100% {
+		fill: url(#gradient3);
+	}
+}
+
+// ICON ANIMATION 4
+
+.flickerIcon4 {
+	@include animation(iconAnimation4 1.5s ease-in-out);
+	@include animation-iteration-count(1);
+	-webkit-animation-delay: .5s;
+	animation-delay: .5s;
+}
+
+@include keyframes(iconAnimation4) {
+	0% {
+		fill: url(#gradient4);
+	}
+	15% {
+		fill: $black;
+	}
+	25% {
+		fill: url(#gradient4);
+	}
+	35% {
+		fill: $black;
+	}
+	50% {
+		fill: url(#gradient4);
+	}
+	100% {
+		fill: url(#gradient4);
 	}
 }
 

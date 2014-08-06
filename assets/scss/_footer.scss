@@ -1,0 +1,53 @@
+// FOOTER
+
+footer {
+	float: left;
+	width: 100%;
+	padding-bottom: 40px;
+	@include box-sizing(border-box);
+}
+
+.footer-email {
+	@include span-columns(6);
+	@include box-sizing(border-box);
+	a {
+		color: $white;
+		font-size: 1em;
+		font-family: $header-font;
+		@include animation(all .3s ease-in-out);
+		&:hover {
+			color: $neonGreen;
+			-webkit-text-shadow: 0px 0px 20px $neonGreen;
+			text-shadow: 0px 0px 20px $neonGreen;
+		}
+	}
+}
+
+.footer-social {
+	@include span-columns(6);
+	@include box-sizing(border-box);
+	text-align: right;
+	i {
+		color: $white;
+		font-size: 1em;
+		margin: 0 5px;
+		cursor: pointer;
+		@include animation(all .3s ease-in-out);
+		&:hover {
+			color: $neonGreen;
+			-webkit-text-shadow: 0px 0px 20px $neonGreen;
+			text-shadow: 0px 0px 20px $neonGreen;
+		}
+		@include mq(tablet) {
+			font-size: 2em;
+			margin: 0 25px;
+		}
+	}
+}
+
+i.fa.fa-instagram {
+	margin: 0 0 0 5px !important;
+	@include mq(tablet) {
+		margin: 0 0 0 25px !important;
+	}
+}

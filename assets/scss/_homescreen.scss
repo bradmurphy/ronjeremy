@@ -7,8 +7,15 @@
 	min-height: 768px;
 	background: url(../img/background-palm.jpg) center fixed;
 	background-size: cover;
-	@include mq(tablet) {
-		background-size: contain;
+	.top {
+		display: none;
+		@include mq(tablet) {
+			display: block;
+			float: left;
+			background: $siteGray;
+			width: 100%;
+			height: $homescreen-vertical-width;
+		}
 	}
 	.left {
 		display: none;
@@ -17,7 +24,7 @@
 			display: block;
 			height: 861px;
 			background: $blue-gradient;
-			width: $homescreen-side-width;
+			width: $homescreen-horizontal-width;
 		}
 	}
 	.sun {
@@ -40,7 +47,7 @@
 			display: block;
 			height: 861px;
 			background: $blue-gradient;
-			width: $homescreen-side-width;
+			width: $homescreen-horizontal-width;
 		}
 	}
 	.bottom {
@@ -50,7 +57,7 @@
 			float: left;
 			background: $siteGray;
 			width: 100%;
-			height: $homescreen-bottom-width;
+			height: $homescreen-vertical-width;
 		}
 	}
 }
@@ -65,10 +72,10 @@
 		position: relative;
 		left: 25%;
 		width: 50%;
-		margin-top: 120px;
+		margin-top: 108px;
 		z-index: 4;
 		li {
-			padding: 60px 0;
+			padding: 50px 0;
 			text-align: center;
 			a {
 				font-family: $header-font;
@@ -92,14 +99,15 @@
 a.game-callout-mobile {
 	position: relative;
 	width: 200px;
-	height: 155px;
+	height: 281px;
 	display: block;
 	left: 50%;
 	margin-left: -100px;
-	background: url(../img/game-callout-small.png);
+	background: url(../img/mobilebottles.png) no-repeat;
+	background-size: contain;
 	text-indent: -9999px;
 	overflow: hidden;
-	margin-top: 50px;
+	margin-top: 175px;
 	@include mq(tablet) {
 		display: none;
 	}
@@ -110,6 +118,7 @@ a.game-callout-mobile {
 	@include mq(tablet) {
 		display: block;
 		float: right;
+		margin-right: 2%;
 		margin-top: -185px;
 		background: url(../img/game-callout.png);
 		width: 288px;
@@ -122,33 +131,90 @@ a.game-callout-mobile {
 
 
 
-// RON LOGO
+// RON MOBILE LOGO
 
 #homescreen-logo-mobile {
-	position: relative;
+	position: fixed;
 	z-index: 3;
-	left: 50%;
+	left: 0;
 	top: 0;
-	width: 256px;
-	margin: 70px 0 0 -128px;
-	@include mq(android) {
-		width: 384px;
-		margin: 40px 0 0 -192px;
-	}
+	width: 76px;
+	height: 82px;
+	margin: 5% 0 0 10%;
+	z-index: 5;
+	cursor: pointer;
 	@include mq(tablet) {
 		display: none;
 	}
 }
 
+// RON LOGO
+
 #homescreen-logo {
 	display: none;
 	@include mq (tablet) {
 		display: block;
-		position: absolute;
-		z-index: 3;
+		position: fixed;
+		z-index: 5;
 		left: 50%;
-		top: 345px;
+		top: 0;
 		width: 660px;
-		margin: 0 0 0 -330px;
+		margin: 292px 0 0 -330px;
+		z-index: 5;
+		cursor: pointer;
+	}
+}
+
+// ANIMATION CLASS
+
+.big-logo-animation {
+	@include animation(logoAnimation 2s ease-in-out 1s);
+	@include animation-iteration-count(1);
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+// LOGO ANIMATION
+
+@include keyframes(logoAnimation) {
+	0% {
+		left: 50%;
+		width: 660px;
+		margin: 292px 0 0 -330px;
+	}
+	100% {
+		left: 0;
+		top: 0;
+		width: 256px;
+		margin: 5% 0 0 10%;
+	}
+}
+
+// DOWN ARROW
+
+.down-arrow {
+	position: relative;
+	left: 50%;
+	background: url(../img/arrow-right.png);
+	background-size: 100%;
+	@include transform(rotate(90deg));
+	width: 40px !important;
+	height: 35px !important;
+	margin: 50px 0 0 -30px;
+	cursor: pointer;
+	@include animation(downArrowAnimation 1.5s ease-in-out infinite alternate-reverse both);
+	@include mq(tablet) {
+		display: none;
+	}
+}
+
+// DOWN ANIMATION
+
+@include keyframes(downArrowAnimation) {
+	0% {
+		margin-top: 70px;
+	}
+	100% {
+		margin-top: 30px;
 	}
 }

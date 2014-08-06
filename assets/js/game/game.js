@@ -6,41 +6,86 @@ var ronJeremyGame = (function () {
 
 	function game() {
 
-		var gameStatus = true;	
+		// make page stuff work
+		$(".page").hide().first().show();
 
-		$("#next").click(function() {
+		$(".page a.pagelink").on("click", function(e) {
+			e.preventDefault();
 
-			if (gameStatus) {
-				$("#needle").addClass("needle-animation");
-				$("#challenge-wrap").removeClass("bounceOutUp");
-				$("#challenge-wrap").removeClass("bounceInDown");
-				$("#challenge-wrap").addClass("animated bounceInDown");
-				var randomCopy = gameData[Math.floor(Math.random()*gameData.length)];
-				document.getElementById('challenge').innerHTML = "challenge #" + randomCopy; 
-				gameStatus = false;
-			} else {
-				$("#challenge-wrap").removeClass("bounceInDown");
-				$("#challenge-wrap").addClass("bounceOutUp");
-
-				setTimeout(stopClock, 800);
-				setTimeout(dropClock, 1000);
-			}
-
-			function stopClock() {
-				$("#needle").removeClass("needle-animation");
-			}
-
-			function dropClock() {
-				$("#needle").addClass("needle-animation");
-				$("#challenge-wrap").removeClass("bounceOutUp");
-				$("#challenge-wrap").addClass("animated bounceInDown");
-				var randomCopy = gameData[Math.floor(Math.random()*gameData.length)];
-				document.getElementById('challenge').innerHTML = "challenge #" + randomCopy; 
-			}
-
+			var newPageID = $(this).attr("href").replace("#", "");
+			changePage(newPageID);
 		});
 
-	}
+		var location = "";
+
+		$("#where-bar").on("click", function() {
+			location = "bar";
+		});
+
+		$("#where-friends").on("click", function() {
+			location = "friends";
+		});
+
+		function changePage(pageName) {
+			$(".page:visible").fadeOut();
+			$(".page#"+pageName).delay(400).fadeIn();
+			$(".page#"+pageName).trigger("showing");
+		};
+
+		$(".page#gameplay").on("showing", function() {
+
+			var randIndex = Math.floor(Math.random() * challenges[location].length);
+			var challenge = challenges[location][randIndex];
+			$("#needle").addClass("needle-animation");
+			$("#action-shot").css("background", "url(" + challenge.filename + ");");
+			$("#challenge-desc").html(challenge.challengeDescription);
+			// change challenge image and description on gameplay page to match data in *challenge*
+			// change challenge title on social page to match data in *challenge*
+
+			setTimeout(function() {
+				changePage("outoftime");
+				console.log(challenge.filename);
+				$("#challenge-name").html(challenge.challengeName);
+			}, 500)
+		});
+
+		var gameStatus = true;	
+
+		// $("#next").click(function() {
+
+		// 	if (gameStatus) {
+		// 		$("#needle").addClass("needle-animation");
+		// 		$("#challenge-wrap").removeClass("bounceOutUp");
+		// 		$("#challenge-wrap").removeClass("bounceInDown");
+		// 		$("#challenge-wrap").addClass("animated bounceInDown");
+		// 		var randomCopy = gameData[Math.floor(Math.random()*gameData.length)];
+		// 		document.getElementById('challenge').innerHTML = "challenge #" + randomCopy; 
+		// 		gameStatus = false;
+		// 	} else {
+		// 		$("#challenge-wrap").removeClass("bounceInDown");
+		// 		$("#challenge-wrap").addClass("bounceOutUp");
+
+		// 		setTimeout(stopClock, 800);
+		// 		setTimeout(dropClock, 1000);
+		// 	}
+
+		// 	function stopClock() {
+		// 		$("#needle").removeClass("needle-animation");
+		// 	}
+
+		// 	function dropClock() {
+		// 		$("#needle").addClass("needle-animation");
+		// 		$("#challenge-wrap").removeClass("bounceOutUp");
+		// 		$("#challenge-wrap").addClass("animated bounceInDown");
+		// 		var randomCopy = gameData[Math.floor(Math.random()*gameData.length)];
+		// 		document.getElementById('challenge').innerHTML = "challenge #" + randomCopy; 
+		// 	}
+
+		// });
+
+
+
+}
 
 	// INIT FUNCTION
 
@@ -75,13 +120,7 @@ $(document).ready(function() {
 
 $(window).load(function() {
 
-	$(".spinner").delay(1500).fadeOut(500);
-
-	function loadContent() {
-		$("#game").fadeIn(500).addClass("opacity");
-	}
-	
-	setTimeout(loadContent, 2000);
+	$(".overlay").delay(2500).fadeOut(500);
 
 });
 
