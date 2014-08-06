@@ -118,6 +118,24 @@ h2 {
 	}
 }
 
+h3 {
+	font-family: $header-font;
+	font-size: 1.5em;
+	background: $clockRed;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent !important;
+	-webkit-text-shadow: 0px 0px 20px $clockRed;
+	text-shadow: 0px 0px 20px $clockRed;
+	text-align: center;
+	margin-bottom: 55px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	@include mq(tablet) {
+		margin-top: 150px;
+		font-size: 1.2em;
+	}
+}
+
 p {
 	font-family: $copy-font;
 	font-size: 1em;

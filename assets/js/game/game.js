@@ -27,6 +27,7 @@ var ronJeremyGame = (function () {
 		});
 
 		function changePage(pageName) {
+			window.scrollTo(0,0);
 			$(".page:visible").fadeOut();
 			$(".page#"+pageName).delay(400).fadeIn();
 			$(".page#"+pageName).trigger("showing");
@@ -37,16 +38,16 @@ var ronJeremyGame = (function () {
 			var randIndex = Math.floor(Math.random() * challenges[location].length);
 			var challenge = challenges[location][randIndex];
 			$("#needle").addClass("needle-animation");
-			$("#action-shot").css("background", "url(" + challenge.filename + ");");
+			document.getElementById("action-shot").style.backgroundImage = "url('"+challenge.filename+"')";
 			$("#challenge-desc").html(challenge.challengeDescription);
 			// change challenge image and description on gameplay page to match data in *challenge*
 			// change challenge title on social page to match data in *challenge*
 
 			setTimeout(function() {
 				changePage("outoftime");
-				console.log(challenge.filename);
 				$("#challenge-name").html(challenge.challengeName);
-			}, 500)
+			}, 31000);
+
 		});
 
 		var gameStatus = true;	
