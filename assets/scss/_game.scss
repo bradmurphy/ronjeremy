@@ -264,8 +264,9 @@ p.game-p {
 }
 
 .pagelink {
+	font-family: $header-font;
 	color: $white;
-	font-size: 1em;
+	font-size: 1.35em;
 	text-align: center;
 	text-transform: uppercase;
 	padding: 20px 20px;
@@ -283,8 +284,9 @@ p.game-p {
 
 
 .yes {
+	font-family: $header-font;
 	color: $neonGreen;
-	font-size: 1.5em;
+	font-size: 1.35em;
 	text-align: center;
 	text-transform: uppercase;
 	padding: 0 0;
@@ -303,8 +305,9 @@ p.game-p {
 }
 
 .no {
+	font-family: $header-font;
 	color: $clockRed;
-	font-size: 1.5em;
+	font-size: 1.35em;
 	text-align: center;
 	text-transform: uppercase;
 	padding: 0 0;
