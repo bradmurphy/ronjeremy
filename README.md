@@ -1,4 +1,4 @@
 Ron de Jeremy
 =========
 
-Website concept for Ron de Jeremy Rum.
+Rebranding/Digital Experience concept for Ron de Jeremy Rum.
