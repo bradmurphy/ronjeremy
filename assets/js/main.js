@@ -392,8 +392,15 @@ $(document).ready(function() {
 
 	// $(".age-verification").hide();
 	// $(".overlay").hide();
-	
-	ronJeremy.init();
+
+	var isChrome = /chrome/i.test( navigator.userAgent );
+
+	if (isChrome) {
+		ronJeremy.init();
+	}  else {
+		$("body").empty();
+		$("body").html('<p style="text-align: center; color: white; margin-top: 20px;">This prototype is optimized only for <a href="https://www.google.com/chrome/" target=="_blank" style="color: red;">Google Chrome</a>, thankyou.</p>');
+	}
 
 });
 

@@ -7,6 +7,9 @@
 	@if $point == laptop {
 		@media (min-width: 960px) { @content; }
 	}
+	@else if $point == phonething {
+		@media (min-width: 769px) { @content; }
+	}
 	@else if $point == tablet {
 		@media (min-width: 768px) { @content; }
 	}
@@ -20,7 +23,7 @@
 
 // MISC
 
-$social-height: calc(100% - 76px);
+$social-height: calc(80% - 76px);
 $homescreen-horizontal-width: calc(50% - 640px);
 $homescreen-vertical-width: calc(50% - 430px);
 $blue-gradient: -webkit-linear-gradient(top, #191919 0%,#08003e 50%,#191919 100%);

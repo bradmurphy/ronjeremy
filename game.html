@@ -25,136 +25,139 @@
 
         <div class="overlay"><div class="spinner"><div></div></div></div><!-- END SPINNER -->
 
-        
-        <div id="howto" class="page">
-
-            <div class="content-wrap row">
-                
-                <img src="assets/img/game/game-welcome.png" alt="Welcome" class="game-welcome"/>
-                <img src="assets/img/game/game-howto.png" alt="How To Play" class="how-to"/>
-
-                <p class="game-p">Do you have the confidence to live like Ron? Get out of your comfort zone and complete these challenges in 30 seconds or you must take a Ron de Jeremy shot!</p>
-
-                <p class="game-p">When ready to play, make sure a friend is available to record the moment. Once you press start the challenge will appear on screen as the countdown begins.</p>
-                
-                <div class="link-wrap">
-                    <a class="pagelink full" href="#whereareyou">next</a>
-                </div>
-
-                <img src="assets/img/logo-small.png" alt="" class="game-logo"/>
-
-            </div>
-
+        <div class="phone-wrap">
             
-        </div>
+            <div id="howto" class="page">
 
+                <div class="content-wrap row">
+                    
+                    <img src="assets/img/game/game-welcome.png" alt="Welcome" class="game-welcome"/>
+                    <img src="assets/img/game/game-howto.png" alt="How To Play" class="how-to"/>
 
-        <div id="whereareyou" class="page">
+                    <p class="game-p">Do you have the confidence to live like Ron? Get out of your comfort zone and complete these challenges in 30 seconds or you must take a Ron de Jeremy shot!</p>
 
-            <div class="content-wrap row">
-                
-                <img src="assets/img/game/game-welcome.png" alt="Welcome" class="game-welcome"/>
-                <img src="assets/img/game/game-where.png" alt="Where Are You" class="how-to"/>
-                
-                <div class="link-wrap-full">
-                    <a class="pagelink full" id="where-bar" href="#start">bar</a><br/>
-                    <a class="pagelink full" id="where-friends" href="#start">home with friends</a>
+                    <p class="game-p">When ready to play, make sure a friend is available to record the moment. Once you press start the challenge will appear on screen as the countdown begins.</p>
+                    
+                    <div class="link-wrap">
+                        <a class="pagelink full" href="#whereareyou">next</a>
+                    </div>
+
+                    <img src="assets/img/logo-small.png" alt="" class="game-logo"/>
+
                 </div>
 
-                <img src="assets/img/logo-small.png" alt="" class="game-logo"/>
+                
+            </div>
+
+
+            <div id="whereareyou" class="page">
+
+                <div class="content-wrap row">
+                    
+                    <img src="assets/img/game/game-welcome.png" alt="Welcome" class="game-welcome"/>
+                    <img src="assets/img/game/game-where.png" alt="Where Are You" class="how-to"/>
+                    
+                    <div class="link-wrap-full">
+                        <a class="pagelink full" id="where-bar" href="#start">bar</a><br/>
+                        <a class="pagelink full" id="where-friends" href="#start">home with friends</a>
+                    </div>
+
+                    <img src="assets/img/logo-small.png" alt="" class="game-logo"/>
+
+                </div>
+
 
             </div>
 
 
-        </div>
+            <div id="start" class="page">
 
+                <div class="content-wrap row">
+                    
+                    <img src="assets/img/game/game-welcome.png" alt="Welcome" class="game-welcome"/>
+                    
+                    <div class="link-wrap">
+                        <a class="pagelink full" href="#gameplay">start</a>
+                    </div>
 
-        <div id="start" class="page">
+                    <img src="assets/img/logo-small.png" alt="" class="game-logo"/>
 
-            <div class="content-wrap row">
-                
-                <img src="assets/img/game/game-welcome.png" alt="Welcome" class="game-welcome"/>
-                
-                <div class="link-wrap">
-                    <a class="pagelink full" href="#gameplay">start</a>
                 </div>
-
-                <img src="assets/img/logo-small.png" alt="" class="game-logo"/>
 
             </div>
 
-        </div>
 
 
+            <div id="gameplay" class="page">
+                <div class="game-wrap" id="action-shot">
 
-        <div id="gameplay" class="page">
-            <div class="game-wrap" id="action-shot">
+                    <div class="challenge-wrap">
+                        
+                        <h1>30 seconds</h1>
 
+                        <div class="clock">
+                            <div id="needle"></div>
+                        </div>
+
+                        <div class="link-wrap-full">
+                            <div><span id="challenge-desc"></span><br/><i class="fa fa-video-camera"></i></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div id="outoftime" class="page">
                 <div class="challenge-wrap">
                     
-                    <h1>30 seconds</h1>
+                    <h3>out of time!</h3>
 
-                    <div class="clock">
-                        <div id="needle"></div>
+                    <div class="clock2">
+                        <div id="needle2"></div>
                     </div>
 
                     <div class="link-wrap-full">
-                        <div><span id="challenge-desc"></span><br/><i class="fa fa-video-camera"></i></div>
+                        <span class="game-span">Did you complete the challenge?</span>
+                        <div class="nothing">
+                            <a class="pagelink yes" href="#social">yes</a>
+                            <a class="pagelink no" href="#start">no</a>
+                        </div>
                     </div>
 
                 </div>
 
             </div>
 
-        </div>
 
-
-        <div id="outoftime" class="page">
-            <div class="challenge-wrap">
+            <div id="social" class="page">
                 
-                <h3>out of time!</h3>
+                <div class="content-wrap row">
+                    
+                    <img src="assets/img/game/game-welcome.png" alt="Welcome" class="game-welcome"/>
+                    
+                    <div class="social-wrap">
+                        <span class="game-span">I completed the Ron Jeremy <span id="challenge-name"></span> Challenge #LiveLikeRon</span>
 
-                <div class="clock2">
-                    <div id="needle2"></div>
-                </div>
+                        <div>
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-twitter"></i>
+                            <i class="fa fa-instagram"></i>
+                        </div>
 
-                <div class="link-wrap-full">
-                    <span class="game-span">Did you complete the challenge?</span>
-                    <div class="nothing">
-                        <a class="pagelink yes" href="#social">yes</a>
-                        <a class="pagelink no" href="#start">no</a>
+                        <a class="pagelink full" href="#start">play again</a>
                     </div>
+
+                    <img src="assets/img/logo-small.png" alt="" class="game-logo"/>
+
                 </div>
 
             </div>
 
         </div>
-
-
-        <div id="social" class="page">
-            
-            <div class="content-wrap row">
-                
-                <img src="assets/img/game/game-welcome.png" alt="Welcome" class="game-welcome"/>
-                
-                <div class="social-wrap">
-                    <span class="game-span">I completed the Ron Jeremy <span id="challenge-name"></span> Challenge #LiveLikeRon</span>
-
-                    <div>
-                        <i class="fa fa-facebook"></i>
-                        <i class="fa fa-twitter"></i>
-                        <i class="fa fa-instagram"></i>
-                    </div>
-
-                    <a class="pagelink full" href="#start">play again</a>
-                </div>
-
-                <img src="assets/img/logo-small.png" alt="" class="game-logo"/>
-
-            </div>
-
-        </div>
-
+        <p class="desktop-notice">Please view on phone or tablet for best experience.</p>
 
 
 
