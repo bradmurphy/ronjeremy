@@ -164,10 +164,11 @@ button {
 .phone-wrap {
 	width: 100%;
 	height: 100%;
+	-webkit-device-pixel-ratio: 3;
 	@include mq(tablet) {
 		margin: 0 auto;
 		width: 320px;
-		height: 568px;
+		height: 640px;
 	}
 }
 
